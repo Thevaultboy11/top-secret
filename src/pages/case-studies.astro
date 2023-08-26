@@ -1,0 +1,42 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import { headerData } from '~/data';
+import CaseStudy from '~/components/case-study';
+
+const meta = {
+  title: 'Free Penetration Test',
+};
+---
+
+<Layout {meta}>
+  <Fragment slot="header">
+    <Header {...headerData} showRssFeed showToggleTheme position="right" />
+  </Fragment>
+
+  <!-- hero Widget ******************* -->
+  <!-- callToAction={{ text: 'What we offer', href: '', icon: 'tabler:arrow-down' }} -->
+  <Hero>
+    <Fragment slot="title">
+      <h1 class="w-full font-bold text-center text-3xl md:text-7xl">Real results</h1>
+      <p class="text-xl">More stories coming in the next week</p>
+    </Fragment>
+    <Fragment slot="content">
+      <div class="p-4 mt-8">
+        <CaseStudy
+          data={[
+            {
+              title: '"Starship Shield has saved us from 2 major data breaches."',
+              client_name: 'Alen Vlahovljak',
+              url: 'boostroom',
+              img: 'images/alen_testimonial.png',
+            },
+          ]}
+          client:only
+        />
+      </div>
+    </Fragment>
+  </Hero>
+</Layout>
