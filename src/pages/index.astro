@@ -1,7 +1,7 @@
 ---
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
-
+import Cta from '~/components/Cta.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -45,7 +45,7 @@ const meta = {
   <section class:list={['pt-0 md:pt-0', 'lg:mt-20  dark:bg-slate-800 py-16 md:py-20 not-prose']}>
     <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
       <div class="mb-10 md:mx-auto flex text-center gap-y-2 items-center justify-center flex-col md:mb-12 max-w-3xl">
-        <p class="title-info">Security</p>
+        <p class="info-title">Security</p>
         <h2 class="sub-title">We’ve worked with 3+ companies with over 1000+ users</h2>
         <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400"></p>
       </div>
@@ -134,7 +134,7 @@ const meta = {
   <!-- Content Widget **************** -->
 
   <div class="w-full flex flex-col items-center gap-y-8">
-    <div class="title-info">Free resources</div>
+    <div class="info-title">Free resources</div>
     <h1 class="sub-title w-1/2 text-center">Ready to start getting a torrential security boost?</h1>
     <div class="w-full bg-paper max-w-4xl rounded-lg min-h-96 px-8 py-16 overflow-clip relative">
       <Picture
@@ -172,34 +172,5 @@ const meta = {
       <button class="cta-button-sm w-72 mt-8">Calculate now</button>
     </div>
   </div>
-  <div class="w-full p-20 mt-32">
-    <div
-      style="box-shadow: -1px 3px 36px 0px rgba(105,41,196,0.75);"
-      class="w-full flex gap-y-6 relative bg-paper rounded-lg items-center justify-center flex-col h-80 overflow-clip"
-    >
-      <div class="title-info z-1">Hybrid model</div>
-
-      <!-- <div class="blur" id="follower"></div> -->
-
-      <p class="text-3xl z-3">Discover new ways to enhance your security within one month</p>
-      <h1 class="text-xl z-3">Did you know there are new ways to secure applications?</h1>
-      <a class="cta-button-sm" href={'/about-us'}>Yes, show me how</a>
-    </div>
-  </div>
+  <Cta />
 </Layout>
-
-<!-- <script>
-  let timeoutId = 0;
-  document.addEventListener('mousemove', (e) => {
-    clearTimeout(timeoutId); // Clear any existing timeout
-
-    timeoutId = setTimeout(() => {
-      const follower = document.getElementById('follower');
-      const x = e.clientX - 100;
-      const y = e.clientY - 250;
-
-      follower.style.left = `${x}px`;
-      follower.style.top = `${y}px`;
-    }, 003); // Set a new timeout with a delay of 300 milliseconds
-  });
-</script> -->

@@ -14,7 +14,7 @@ export const headerData = {
     },
     {
       text: 'Case study',
-      href: "/case-study",
+      href: "/story-type",
     },
     {
       text: 'Blog',
@@ -41,7 +41,7 @@ export const headerData = {
       title: 'Quick links',
       links: [
         { text: 'About us', href: '/about-us' },
-        { text: 'Case studies', href: '/case-studies' },
+        { text: 'Case studies', href: '/story-type' },
         { text: 'Our method', href: '/hybrid-model' },
         { text: 'Join Mission', href: '/book-a-meeting' },
       ],
