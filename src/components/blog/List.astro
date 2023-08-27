@@ -9,7 +9,7 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<ul>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
   {
     posts.map((post) => (
       <li class="mb-12 md:mb-20">

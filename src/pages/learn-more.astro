@@ -1,0 +1,56 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+import Cta from '~/components/Cta.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import LatestPosts from '~/components/blog/LatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Picture } from '@astrojs/image/components';
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-4 md:py-8">
+      <div class="text-center max-w-screen-xl mx-auto">
+        <p class="info-title max-w-md mx-auto">Secured 3 000+ active users</p>
+        <h1
+          class="cta-title text-4xl my-8 text-black md:text-6xl font-bold leading-tighter tracking-tighter font-heading"
+        >
+          How we amplify business's cybersecurity from average to exceptional in one Month. (Even when the number of
+          cyber-attacks increases by 38% annually. )
+        </h1>
+        <p class="text-primary text-center name-title">
+          Forget about trial offers… Here’s how to secure your application in one month.
+        </p>
+      </div>
+      <div class="max-w-screen-xl p-10 mx-auto">
+        <iframe
+          width="1280"
+          height="720"
+          src="https://www.youtube.com/embed/QelSVeRmNUQ"
+          title="How Boostroom Evaded a Data Breach"
+          frameborder="0"
+          class="w-full mx-auto"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="cta-button-xl max-w-screen-xl flex justify-center mx-auto cursor-pointer">
+        Claim your free hybrid assement
+      </div>
+    </div>
+  </div>
+</Layout>

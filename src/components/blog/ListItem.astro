@@ -20,7 +20,7 @@ const image = await findImage(post.image);
 const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
+<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 p-20 bg-paper rounded-md ${image ? '' : ''}`}>
   {
     image && (
       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
@@ -46,7 +46,7 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
       <div class="mb-1">
         <span class="text-sm">
           <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
+          <time class="name-title" datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
           {
             post.category && (
               <>
@@ -60,10 +60,10 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
           }
         </span>
       </div>
-      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
+      <h2 class="text-xl md:text-3xl font-bold leading-tight font-heading dark:text-slate-300 my-12">
         {
           link ? (
-            <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
+            <a class="hover:text-primary  transition ease-in duration-200" href={link}>
               {post.title}
             </a>
           ) : (
@@ -73,7 +73,7 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
       </h2>
     </header>
 
-    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>}
+    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-xl ">{post.excerpt}</p>}
     <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer>

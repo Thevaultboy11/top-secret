@@ -14,7 +14,7 @@ export const headerData = {
     },
     {
       text: 'Case study',
-      href: "/story-type",
+      href: "/story-type/case-study",
     },
     {
       text: 'Blog',
