@@ -51,10 +51,11 @@ const {
     >
     </div>
   </div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 md:pt-20">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-12">
-      <div class="text-center pb-10 md:pb-16 max-w-screen-lg mx-auto">
+      <div class="text-center pb-10 md:pb-16 max-w-screen-xl mx-auto">
         {
           title && (
             <h1
@@ -63,7 +64,7 @@ const {
             />
           )
         }
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-5xl mx-auto">
           {
             subtitle && (
               <p class="	  cover-sub-title text-3xl  md:text-5xl  mb-6 dark:text-slate-300" set:html={subtitle} />
@@ -77,7 +78,7 @@ const {
                     <Fragment set:html={callToAction} />
                   ) : (
                     <a
-                      class="cta-button-lg text-lg md:text-2xl"
+                      class="cta-button-lg text-lg md:text-2xl mt-4 "
                       href={callToAction?.href}
                       target="_blank"
                       rel="noopener"

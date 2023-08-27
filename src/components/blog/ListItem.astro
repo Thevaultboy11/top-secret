@@ -20,7 +20,9 @@ const image = await findImage(post.image);
 const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 p-20 bg-paper rounded-md ${image ? '' : ''}`}>
+<article
+  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 p-8 md:p-20 bg-paper rounded-md ${image ? '' : ''}`}
+>
   {
     image && (
       <a class="relative block group" href={link ?? 'javascript:void(0)'}>

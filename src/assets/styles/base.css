@@ -27,31 +27,34 @@
     overflow: hidden;
     grid-row-gap: 2em;
     transition: box-shadow 0.3s ease-in;
-@apply p-8 md:px-16 md:py-14 md:items-stretch items-start
+@apply p-8 md:px-16 md:py-14 md:items-stretch items-start md:gap-x-8
   }
- .link-case-active {
+  .link-case-active {
     color: #fff;
     text-transform: uppercase;
     background-color: #5a36ff;
     font-weight: 900;
     text-transform: uppercase;
     border-radius: 100px;
-    padding: 12px 12px 12px 16px;
     transition: box-shadow .4s;
     text-align: center;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @apply py-1 lg:py-3 md:px-4
  }
  .link-case {
   color: #5a36ff;
   text-transform: uppercase;
-  background-color: #c6c6c6;
+  background-color: rgba(198, 198, 198, 0.3);
   font-weight: 900;
-  text-transform: uppercase;
   border-radius: 100px;
-  padding: 12px 12px 12px 16px;
   transition: box-shadow .4s;
-  text-align: center;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @apply py-1 md:py-3 md:px-4
+
 }
   .info-card:hover {
     box-shadow: 14px 8px 14px 0px rgb(105, 41, 196);
@@ -110,6 +113,7 @@
     transition: box-shadow .4s cubic-bezier(.25,.46,.45,.94);
     display: flex;
     box-shadow: 0 7px 80px -12px #050401, inset 0 0 rgba(19,36,54,0), inset 0 0 rgba(19,36,54,0);
+  @apply text-lg md:text-3xl
   }
 
 .info-title {
@@ -167,6 +171,7 @@
     color: white;
     text-transform: uppercase;
     font-weight: 1000;
+    @apply leading-4 md:leading-10;
 
   }
   .cover-sub-title {
