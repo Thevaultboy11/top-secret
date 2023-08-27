@@ -27,21 +27,14 @@ const {
 } = Astro.props;
 ---
 
-<section class="not-prose">
-  <Picture
-    style="box-shadow: 14px 8px 30px 0px #6929c4;"
-    class="hidden md:block w-full absolute inset-0 h-full pointer-events-none select-none rounded-lg bg-gray-500 shadow-lg"
-    width={400}
-    height={300}
-    widths={[400, 768]}
-    sizes="100vw, 432px"
-    aspectRatio="1600:900"
-    alt="sa"
-    src={'/images/conference.jpeg'}
-  />
-  <div
-    class="absolute w-full h-full inset-0 opacity-70"
-    style="background-image: linear-gradient(
+<section
+  class="relative h-300 md:h-screen md:-mt-20 xl:-mt-20 bg-cover bg-center mb-16"
+  style="background-image: url('/images/conference.jpeg');  box-shadow: 0px 12px 10px 0px #6929c2;  "
+>
+  <div>
+    <div
+      class="absolute w-full h-full inset-0 opacity-70"
+      style="background-image: linear-gradient(
       0deg,
       hsl(265deg 65% 46%) 0%,
       hsl(265deg 65% 46%) 13%,
@@ -55,65 +48,50 @@ const {
     );
     
     "
-  >
-  </div>
-</section>
-<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-  <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-  <div class="py-12 md:py-20">
-    <div class="text-center pb-10 md:pb-16 max-w-screen-lg mx-auto">
-      {
-        title && (
-          <h1
-            class="cta-title text-5xl md:text-8xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
-            set:html={title}
-          />
-        )
-      }
-      <div class="max-w-3xl mx-auto">
-        {subtitle && <p class="text-lg	 cta-sub-title  mb-6 dark:text-slate-300" set:html={subtitle} />}
-        <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-          {
-            callToAction && (
-              <div class="flex w-full sm:w-auto">
-                {typeof callToAction === 'string' ? (
-                  <Fragment set:html={callToAction} />
-                ) : (
-                  <a class="cta-button-lg" href={callToAction?.href} target="_blank" rel="noopener">
-                    {callToAction?.icon && (
-                      <>
-                        <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5" />
-                        &nbsp;
-                      </>
-                    )}
-                    {callToAction?.text}
-                  </a>
-                )}
-              </div>
-            )
-          }
-          {
-            callToAction2 && (
-              <div class="flex w-full sm:w-auto">
-                {typeof callToAction2 === 'string' ? (
-                  <Fragment set:html={callToAction2} />
-                ) : (
-                  <a class="btn w-full" href={callToAction2?.href}>
-                    {callToAction2?.icon && (
-                      <>
-                        <Icon name={callToAction2.icon} class="w-5 h-5 mr-1 -ml-1.5" />
-                        &nbsp;
-                      </>
-                    )}
-                    {callToAction2.text}
-                  </a>
-                )}
-              </div>
-            )
-          }
-        </div>
-      </div>
-      {content && <Fragment set:html={content} />}
+    >
     </div>
   </div>
-</div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-12">
+      <div class="text-center pb-10 md:pb-16 max-w-screen-lg mx-auto">
+        {
+          title && (
+            <h1
+              class="cover-title text-5xl md:text-8xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              set:html={title}
+            />
+          )
+        }
+        <div class="max-w-3xl mx-auto">
+          {
+            subtitle && (
+              <p class="	  cover-sub-title text-3xl  md:text-5xl  mb-6 dark:text-slate-300" set:html={subtitle} />
+            )
+          }
+          <div class="max-w-xs sm:max-w-md mx-auto flex items-center justify-center gap-4">
+            {
+              callToAction && (
+                <div class="flex">
+                  {typeof callToAction === 'string' ? (
+                    <Fragment set:html={callToAction} />
+                  ) : (
+                    <a
+                      class="cta-button-lg text-lg md:text-2xl"
+                      href={callToAction?.href}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {callToAction?.text}
+                    </a>
+                  )}
+                </div>
+              )
+            }
+          </div>
+        </div>
+        {content && <Fragment set:html={content} />}
+      </div>
+    </div>
+  </div>
+</section>

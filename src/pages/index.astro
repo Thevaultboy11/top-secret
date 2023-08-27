@@ -34,7 +34,7 @@ const meta = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="">
+      <span class="text-xl">
         Defining boundaries for a quality security assessment is hard. We make it easy. Access our <span
           class="font-semibold">Free</span
         > 'Hybrid assessment' explenation bellow.
@@ -50,8 +50,8 @@ const meta = {
         <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400"></p>
       </div>
     </div>
-    <div class="w-full lg:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 px-8 mb-32">
-      <div class="info-card">
+    <div class="w-full lg:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 px-4 mb-16">
+      <div class="info-card mb-4">
         <Picture
           class="mx-auto rounded-lg bg-gray-500"
           width={600}
@@ -63,10 +63,10 @@ const meta = {
           src={'/images/interior_spaceship.jpeg'}
         />
         <h1 class="text-3xl mt-2">Case study</h1>
-        <p class="text-xl w-2/3">
+        <p class="text-xl w-full md:w-2/3">
           See our happy clients running their business securely, flawlessly, and scaling to riches.
         </p>
-        <button class="cta-button-sm w-72 mt-4">View Case Studies</button>
+        <button class="cta-button-sm md:w-60">View Case Studies</button>
       </div>
       <div class="info-card">
         <Picture
@@ -80,18 +80,18 @@ const meta = {
           src={'/images/interior_spaceship.jpeg'}
         />
         <h1 class="text-3xl mt-2">Client wins</h1>
-        <p class="text-xl w-2/3">
+        <p class="text-xl w-full md:w-2/3">
           Scroll our forever-updating client wins vault - showcasing Founders celebrating the little wins to
           extraordinary gains.
         </p>
-        <button class="cta-button-sm w-72">View Client Wins</button>
+        <button class="cta-button-sm md:w-60">View Client Wins</button>
       </div>
     </div>
   </section>
-  <div class="grid grid-cols-1 md:grid-cols-12 p-12 gap-4 mb-32">
-    <div class="col-span-6 overflow-clip">
+  <div class="grid grid-cols-1 md:grid-cols-12 p-4 gap-4 mb-16">
+    <div class="col-span-6 px-8 pt-12 overflow-clip hidden md:block">
       <Picture
-        class="mx-auto rotate-12 rounded-lg bg-gray-500 shadow-lg"
+        class="rotate-12 rounded-lg bg-gray-500 shadow-lg"
         width={1600}
         height={900}
         widths={[400, 768]}
@@ -102,43 +102,43 @@ const meta = {
       />
     </div>
     <div class="bg-paper col-span-6 max-w rounded-lg h-full p-8 py-24">
-      <div class="flex flex-col items-center gap-y-2">
-        <p class="text-4xl font-semibold uppercase italic">About us</p>
-        <h1 class="text-6xl font-bold">Starship Shield</h1>
+      <div class="flex flex-col items-center gap-y-2 text-center">
+        <p class="text-3xl md:text-4xl font-semibold uppercase italic">About us</p>
+        <h1 class="text-4xl md:text-6xl font-bold">Starship Shield</h1>
         <p class="text-xl mt-8">
           Tekst Starship Shield is an Agency for all founders to amplify their security and retain customer
           satisfaction.
         </p>
       </div>
 
-      <p class="mt-8 text-xl">
+      <p class="mt-8 text-xl text-center">
         Founded this year by innovators. We’ve worked with <b>3+</b> companies with over <b>1000+ users</b>, over a
         one-month period our clients retained customer satisfaction.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 mt-16 w-full lg:max-w-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 mt-16 w-full lg:max-w-2xl gap-y-4">
         <div class="flex flex-col items-center justify-center">
-          <h1 class="text-4xl bold text-primary">3</h1>
-          <p class="text-primary bold">Companies</p>
+          <h1 class="text-6xl md:text-4xl font-extrabold text-primary">3</h1>
+          <p class="text-primary font-semibold">Companies</p>
         </div>
         <div class="flex flex-col items-center justify-center">
-          <h1 class="text-4xl bold text-primary">3000</h1>
-          <p class="text-primary bold">Secured Users</p>
+          <h1 class="text-6xl md:text-4xl font-extrabold text-primary">3000</h1>
+          <p class="text-primary font-semibold">Secured Users</p>
         </div>
         <div class="flex flex-col items-center justify-center">
-          <h1 class="text-4xl bold text-primary">5</h1>
-          <p class="text-primary bold">Applications tested</p>
+          <h1 class="text-6xl md:text-4xl font-extrabold text-primary">5</h1>
+          <p class="text-primary font-semibold">Applications tested</p>
         </div>
       </div>
     </div>
   </div>
   <!-- Content Widget **************** -->
 
-  <div class="w-full flex flex-col items-center gap-y-8">
+  <div class="w-full flex flex-col items-center gap-y-8 p-4">
     <div class="info-title">Free resources</div>
-    <h1 class="sub-title w-1/2 text-center">Ready to start getting a torrential security boost?</h1>
+    <h1 class="sub-title md:w-1/2 text-center">Ready to start getting a torrential security boost?</h1>
     <div class="w-full bg-paper max-w-4xl rounded-lg min-h-96 px-8 py-16 overflow-clip relative">
       <Picture
-        class="mx-auto rounded-full bg-gray-500 shadow-lg absolute top-8 right-8 rotate-45"
+        class="mx-auto rounded-full z-10 bg-gray-500 shadow-lg absolute top-8 right-8 rotate-45"
         width={200}
         height={200}
         widths={[400, 768]}
@@ -148,10 +148,10 @@ const meta = {
         src={'/images/interior_spaceship.jpeg'}
       />
       <h1 class="text-3xl mb-4">Define a scope in 30 minutes.</h1>
-      <p class="tex-xl w-1/2 mt-4">
+      <p class="tex-xl md:w-1/2 mt-4">
         Paper provides valuable insights for defining a security audit scope effectively in the shortest time possible.
       </p>
-      <button class="cta-button-sm w-72 mt-8">Donwload now</button>
+      <button class="cta-button-sm md:w-60 mt-8">Donwload now</button>
     </div>
     <div class="w-full bg-paper max-w-4xl rounded-lg min-h-96 px-8 py-16 overflow-clip relative">
       <Picture
@@ -165,11 +165,11 @@ const meta = {
         src={'/images/laptop-image.png'}
       />
       <h1 class="text-3xl mb-4">Security assement price calculator</h1>
-      <p class="tex-2xl w-1/2">
+      <p class="tex-2xl md:w-1/2">
         If you are in a hurry, and want to calculate the price of your security assment. Witin 15 minutes you can have a
         rough estimate.
       </p>
-      <button class="cta-button-sm w-72 mt-8">Calculate now</button>
+      <button class="cta-button-sm md:w-60 mt-8">Calculate now</button>
     </div>
   </div>
   <Cta />
