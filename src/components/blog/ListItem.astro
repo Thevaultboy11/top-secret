@@ -20,9 +20,7 @@ const image = await findImage(post.image);
 const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article
-  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 p-8 md:p-20 bg-paper rounded-md ${image ? '' : ''}`}
->
+<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 p-8 md:p-8 bg-paper rounded-md ${image ? '' : ''}`}>
   {
     image && (
       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
@@ -62,7 +60,7 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
           }
         </span>
       </div>
-      <h2 class="text-xl md:text-3xl font-bold leading-tight font-heading dark:text-slate-300 my-12">
+      <h2 class="text-xl md:text-3xl leading-10 font-bold leading-tight font-heading dark:text-slate-300 my-12">
         {
           link ? (
             <a class="hover:text-primary  transition ease-in duration-200" href={link}>
