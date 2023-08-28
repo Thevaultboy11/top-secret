@@ -5,7 +5,7 @@ export const headerData = {
   links: [
     {
       text: 'Resources',
-      href: "/",
+      href: "/resources",
     },
     
     {

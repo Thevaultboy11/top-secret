@@ -1,0 +1,237 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+import emailjs from '@emailjs/browser';
+import { Picture } from '@astrojs/image/components';
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-4 md:py-8">
+      <div class="text-center max-w-screen-lg mx-auto">
+        <p class="info-title max-w-md mx-auto">Need a top-notch security report?</p>
+        <h1
+          class="cover-title text-ibm-black text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+        >
+          3 Steps on how to make a good security assessment <span class="text-primary">scope</span>
+        </h1>
+        <p class="text-ibm-black text-base break-line text-center leading-tight max-w-lg mx-auto">
+          Less Headaches, more time on preparing on a security assement FAST. Even if you are not a technical person : )
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-32" id="Opt">
+    <div class="bg-paper h-200 w-fit rounded-xl p-4 md:p-8 md:px-16">
+      <div class="flex flex-col w-96">
+        <h1></h1>
+        <form class="flex flex-col gap-y-2" id="contactForm">
+          <label for="name">Name</label>
+          <input
+            placeholder="Name Surname"
+            class="rounded-full w-full p-2 md:p-4"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+
+          <label for="email">Email</label>
+          <input
+            placeholder="example@buisnessemail.com"
+            class="rounded-full w-full p-2 md:p-4"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+
+          <label for="phone">Phone Number</label>
+          <input
+            placeholder="Country code / number"
+            class="rounded-full w-full p-2 md:p-4"
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+          />
+
+          <button type="submit" class="cta-button-lg mx-auto md:w-72 mt-8">Send me the white paper</button>
+        </form>
+        <p class="text-xl text-center text-paper">P.S. Say goodbye to miscomunication doing asse</p>
+        <p class="text-xs text-center">
+          YOUR INFORMATION IS 100% SAFE. WE NEVER SHARE YOUR INFORMATION WITH ANYONE. BY CLICKING “SUBMIT” I AGREE TO
+          RECEIVE AUTO AND PRE-MADE E-MAILS AT THE E-MAIL PROVIDED. I UNDERSTAND THAT MY CONSENT IS NOT A CONDITION TO
+          PURCHASE ANYTHING.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-32 max-w-7xl mx-auto flex text-center flex-col justify-center items-center">
+    <p class="info-title max-w-md mx-auto">#SecurityRules</p>
+    <h2 class="sub-title">What make's a good security scope</h2>
+  </div>
+  <!-- one rule -->
+  <div class="mt-16 max-w-7xl mx-auto text-center grid gap-x-8 grid-cols-1 md:grid-cols-3 p-4">
+    <div class="w-full h-200 grid p-4 md:p-8 md:px-16 bg-paper rounded-xl">
+      <Picture
+        src={'/images/how-to-define-scope-1.png'}
+        class="mx-auto rounded-xl"
+        width={300}
+        height={300}
+        widths={[400, 768]}
+        sizes="100vw, 432px"
+        aspectRatio="300:300"
+        alt="sa"
+      />
+      <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading">
+        <a class="transition ease-in duration-200">WHAT NEEDS TO BE ASSESSED</a>
+      </h3>
+      <p class="text-muted dark:text-slate-400 text-lg">
+        This early stage improves how you work with a penetration testing partner. By aligning your view with an
+        external specialist, you can create a clear plan for a strong security project.
+      </p>
+    </div>
+    <div class="w-full h-200 grid gap-x-8 p-8 md:p-8 md:px-16 bg-paper rounded-xl">
+      <Picture
+        src={'/images/how-to-define-scope-1.png'}
+        class="mx-auto rounded-xl"
+        width={300}
+        height={300}
+        widths={[400, 768]}
+        sizes="100vw, 432px"
+        aspectRatio="300:300"
+        alt="sa"
+      />
+      <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading">
+        <a class="transition ease-in duration-200 uppercase">Identifying The Attack Surface</a>
+      </h3>
+      <p class="text-muted dark:text-slate-400 text-lg">
+        Finding the ways that bad actors could use to get into your sensitive data or harm your business. Basically, it
+        means gathering a lot of information Opt your company and its online setup. These are the main areas we focus on
+        during a penetration test.
+      </p>
+    </div>
+    <div class="w-full h-200 grid gap-8 md:gap-8 p-8 md:p-8 md:px-16 bg-paper rounded-xl">
+      <Picture
+        src={'/images/how-to-define-scope-1.png'}
+        class="mx-auto rounded-xl"
+        width={300}
+        height={300}
+        widths={[400, 768]}
+        sizes="100vw, 432px"
+        aspectRatio="300:300"
+        alt="sa"
+      />
+      <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading">
+        <a class="transition ease-in duration-200 uppercase">CHOOSING THE RIGHT APPROACH</a>
+      </h3>
+      <p class="text-muted dark:text-slate-400 text-lg">
+        Deciding how to do the pentest depends on what you're aiming for: Do you want to check inside or outside
+        threats? How thorough and deep do you want this pentest to go? (Black Box,Gray Box,White Box)
+      </p>
+    </div>
+    <div class="col-span-3">
+      <button class="cta-button-lg mx-auto md:w-72 mt-8" id="scrollToOptButton">Yes send me the paper.</button>
+    </div>
+  </div>
+  <div class="mt-32 max-w-4xl mx-auto">
+    <div class="w-full md:mx-auto flex flex-col justify-center items-center gap-y-4">
+      <p class="info-title text-center max-w-md">What are you waiting for?</p>
+      <h2 class="sub-title text-center">Here's Everything You're Getting When You download the paper Today...</h2>
+      <p class="text-ibm-black text-base break-line text-center leading-tight max-w-lg mx-auto">
+        We Can't Wait For You To Experience First Hand How easy it is to make a good scope.
+      </p>
+      <span class="text-accent dark:text-white highlight mb-1 text-center text-xsm"> </span>
+      <Picture
+        class="mx-auto rounded-xl border-1 border-ibm-black border"
+        width={600}
+        height={500}
+        widths={[400, 768]}
+        sizes="100vw, 432px"
+        aspectRatio="1600:900"
+        alt="sa"
+        src={'/images/cta.png'}
+      />
+
+      <div class="mb-8 max-w-lg">
+        <ul class="text-left">
+          <li class="mb-2 md:mb-4 text-base md:text-lg">
+            ✅ <span class="ml-2 md:ml-4">Black Box, Grey Box, White Box Approach</span>
+          </li>
+          <li class="mb-2 md:mb-4 text-base md:text-lg">
+            ✅ <span class="ml-2 md:ml-4"
+              >Specific use cases for: Software Development Company, SMB's, Large Companies
+            </span>
+          </li>
+          <li class="mb-2 md:mb-4 text-base md:text-lg">
+            ✅ <span class="ml-2 md:ml-4">Time Estimation</span>
+          </li>
+        </ul>
+        <div class="w-full flex justify-center">
+          <button class="cta-button-lg mx-auto md:w-72 mt-8" id="scrollToOptButton2">Yes send me the paper.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const scrollToOptButton = document.getElementById('scrollToOptButton');
+    const scrollToOptButton2 = document.getElementById('scrollToOptButton2');
+
+    const OptSection = document.getElementById('Opt');
+
+    scrollToOptButton.addEventListener('click', function () {
+      // Calculate the target position of the Opt section
+      const targetPosition = OptSection.offsetTop;
+
+      // Scroll to the Opt section using smooth behavior
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    });
+    scrollToOptButton2.addEventListener('click', function () {
+      // Calculate the target position of the Opt section
+      const targetPosition = OptSection.offsetTop;
+
+      // Scroll to the Opt section using smooth behavior
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    });
+  });
+  //   sending the email
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const nameInput = form.querySelector('#name').value;
+    const emailInput = form.querySelector('#email').value;
+    const phoneInput = form.querySelector('#phone').value;
+
+    const data = {
+      user_name: nameInput,
+      user_email: emailInput,
+      message_phone: phoneInput,
+    };
+    emailjs.sendForm('service_l3z6grk', 'service_l3z6grk', data, 'RfiHy3u3lH3HXX8xN').then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  });
+</script>

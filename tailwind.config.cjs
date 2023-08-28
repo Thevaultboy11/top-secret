@@ -6,10 +6,11 @@ module.exports = {
     extend: {
       colors: {
         paper: '#F4F4F4',
-        ["ibm-white"]: '#e0e0e0',
+        ["ibm-black"]: '#525252',
         primary: 'var(--aw-color-primary)',
         secondary: '#A223DB',
         accent: 'var(--aw-color-accent)',
+        
       },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],

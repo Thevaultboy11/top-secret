@@ -77,7 +77,7 @@ const {
                         {links.map(({ text: text2, href: href2 }) => (
                           <li>
                             <a
-                              class="first:rounded-t last:rounded-b md:hover:bg-primary  py-2 px-5 block whitespace-no-wrap"
+                              class="first:rounded-t last:rounded-b md:hover:text-primary  py-2 px-5 block whitespace-no-wrap"
                               href={href2}
                             >
                               {text2}
@@ -87,8 +87,41 @@ const {
                       </ul>
                     </>
                   ) : (
-                    <a class="font-medium px-2 py-3 flex items-center transition duration-150 ease-in-out" href={href}>
+                    <a
+                      class="relative font-medium px-2 py-3 flex items-center transition duration-150 ease-in-out"
+                      href={href !== '/resources' ? href : ''}
+                      id="dropdownHoverButton"
+                    >
                       {text}
+                      {href === '/resources' ? (
+                        <Fragment>
+                          <div
+                            id="dropdownHover"
+                            class="z-10 md:hidden md:absolute pl-4 md:p-0 md:bg-paper md:bg-opacity-80  rounded-lg w-2/3 md:shadow md:w-44"
+                          >
+                            <ul class="p-2 -mt-12  text-gray-700 dark:text-gray-200">
+                              <li class="-ml-4 flex items-center justify-center">
+                                <a
+                                  href="/resources/scope-paper"
+                                  class="font-medium  block p-2 rounded-md hover:text-primary hover:bg-gray-100"
+                                >
+                                  Define a scope in 30 minutes.
+                                </a>
+                              </li>
+                              <li class="flex items-center justify-center">
+                                <a
+                                  href="#"
+                                  class="font-medium  block p-2 rounded-md hover:text-primary hover:bg-gray-100"
+                                >
+                                  Security assement price calculator
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </Fragment>
+                      ) : (
+                        <Fragment />
+                      )}
                     </a>
                   )}
                 </li>
@@ -119,3 +152,36 @@ const {
     </div>
   </div>
 </header>
+
+<script>
+  const dropdownButton = document.getElementById('dropdownHoverButton');
+  const dropdown = document.getElementById('dropdownHover');
+
+  dropdownButton.addEventListener('mouseleave', () => {
+    dropdown.classList.add('md:hidden');
+  });
+
+  dropdown.addEventListener('mouseenter', () => {
+    dropdown.classList.remove('md:hidden');
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    dropdown.classList.add('md:hidden');
+  });
+
+  dropdownButton.addEventListener('mouseenter', () => {
+    dropdown.classList.remove('md:hidden');
+  });
+
+  dropdownButton.addEventListener('mouseleave', () => {
+    dropdown.classList.add('md:hidden');
+  });
+
+  dropdown.addEventListener('mouseenter', () => {
+    dropdown.classList.remove('md:hidden');
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    dropdown.classList.add('md:hidden');
+  });
+</script>
