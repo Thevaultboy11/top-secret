@@ -1,7 +1,6 @@
 ---
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
-import emailjs from '@emailjs/browser';
 import { Picture } from '@astrojs/image/components';
 
 const meta = {
@@ -16,76 +15,21 @@ const meta = {
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-4 md:py-8">
       <div class="text-center max-w-screen-lg mx-auto">
-        <p class="info-title text-xs md:text-xl max-w-md mx-auto">Need a top-notch security report?</p>
+        <p class="info-title text-xs md:text-xl max-w-xl mx-auto">What is the price for security?</p>
         <h1
           class="cover-title text-ibm-black text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
         >
-          3 Steps on how to make a good security assessment <span class="text-primary">scope</span>
+          Security assement <span class="text-primary">price</span> calcualtor.
         </h1>
         <p class="text-ibm-black text-base break-line text-center leading-tight max-w-lg mx-auto">
-          Less Headaches, more time on preparing on a security assement FAST. Even if you are not a technical person : )
+          Do you think the price is a bit off with your ? Calculate the avarage costs of security assements Even if you
+          are not a technical person : )
         </p>
+        <button class="cta-button-lg mx-auto md:w-72 mt-12" id="scrollToOptButton">Calculate you expenses</button>
       </div>
     </div>
   </div>
-  <div class="mt-32 grid grid-cols-1 md:grid-cols-2 p-4 max-w-7xl">
-    <div class="flex justify-center items-center">
-      <Picture
-        src={'/images/how-to-define-scope-1.png'}
-        class="mx-auto rotate-6 col-span-4 rounded-xl"
-        width={600}
-        height={600}
-        widths={[400, 768]}
-        sizes="100vw, 432px"
-        aspectRatio="300:300"
-        alt="sa"
-      />
-    </div>
-    <div class="bg-paper col-span-1 h-200 w-full md:w-fit p-4 rounded-xl md:p-8 md:px-16" id="Opt">
-      <div class="flex flex-col justify-center items-center w-full md:w-96">
-        <h1 class="sub-title text-center text-xl md:text-2xl">Enter you details so we can send you the pdf.</h1>
-        <form class="flex w-full flex-col gap-y-2" id="contactForm">
-          <label for="name">Name</label>
-          <input
-            placeholder="Name Surname"
-            class="rounded-full w-full p-2 md:p-4"
-            type="text"
-            id="name"
-            name="name"
-            required
-          />
 
-          <label for="email">Email</label>
-          <input
-            placeholder="example@buisnessemail.com"
-            class="rounded-full w-full p-2 md:p-4"
-            type="email"
-            id="email"
-            name="email"
-            required
-          />
-
-          <label for="phone">Phone Number</label>
-          <input
-            placeholder="Country code / number"
-            class="rounded-full w-full p-2 md:p-4"
-            type="tel"
-            id="phone"
-            name="phone"
-            required
-          />
-
-          <button type="submit" class="shadow-none cta-button-lg mx-auto md:w-72 my-4">Send me the white paper</button>
-        </form>
-        <p class="text-xl text-center text-paper">P.S. Say goodbye to miscomunication with any cyber-sec team.</p>
-        <p class="text-xs text-center">
-          YOUR INFORMATION IS 100% SAFE. WE NEVER SHARE YOUR INFORMATION WITH ANYONE. BY CLICKING “SUBMIT” I AGREE TO
-          RECEIVE AUTO AND PRE-MADE E-MAILS AT THE E-MAIL PROVIDED. I UNDERSTAND THAT MY CONSENT IS NOT A CONDITION TO
-          PURCHASE ANYTHING.
-        </p>
-      </div>
-    </div>
-  </div>
   <div class="mt-32 max-w-7xl mx-auto flex text-center flex-col justify-center items-center">
     <p class="info-title max-w-md mx-auto">#SecurityRules</p>
     <h2 class="sub-title">What make's a good security scope</h2>
@@ -152,48 +96,65 @@ const meta = {
       </p>
     </div>
     <div class="col-span-1 md:col-span-3 w-full flex justify-center items-center">
-      <button class="cta-button-lg mx-auto md:w-72 mt-8" id="scrollToOptButton">Yes send me the paper.</button>
+      <button class="cta-button-lg mx-auto md:w-72 mt-8" id="scrollToOptButton2">I want to calcualte the price.</button>
     </div>
   </div>
-  <div class="mt-32 w-full relative">
-    <div class="w-full max-w-4xl md:mx-auto flex flex-col justify-center items-center gap-y-4">
-      <p class="info-title text-center max-w-md">What are you waiting for?</p>
-      <h2 class="sub-title text-center">Here's Everything You're Getting When You download the paper Today...</h2>
-      <p class="text-ibm-black text-base break-line text-center leading-tight max-w-lg mx-auto">
-        We Can't Wait For You To Experience First Hand How easy it is to make a good scope.
-      </p>
-      <span class="text-accent dark:text-white highlight mb-1 text-center text-xsm"> </span>
+  <div class="mt-32 grid grid-cols-1 md:grid-cols-2 p-4 max-w-5xl mx-auto">
+    <div class="bg-paper col-span-1 h-200 w-full md:w-fit p-4 rounded-xl md:p-8 md:px-16" id="Opt">
+      <div class="flex flex-col justify-center items-center w-full md:w-96">
+        <h1 class="sub-title text-center text-xl md:text-2xl">Enter you details so we can send you the pdf.</h1>
+        <form class="flex w-full flex-col gap-y-2" id="contactForm">
+          <label for="name">Name</label>
+          <input
+            placeholder="Name Surname"
+            class="rounded-full w-full p-2 md:p-4"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+
+          <label for="email">Email</label>
+          <input
+            placeholder="example@buisnessemail.com"
+            class="rounded-full w-full p-2 md:p-4"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+
+          <label for="phone">Phone Number</label>
+          <input
+            placeholder="Country code / number"
+            class="rounded-full w-full p-2 md:p-4"
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+          />
+
+          <button type="submit" class="shadow-none cta-button-lg mx-auto md:w-72 my-4">Send me the white paper</button>
+        </form>
+        <p class="text-xl text-center text-paper">P.S. Say goodbye to overpaying.</p>
+        <p class="text-xs text-center">
+          YOUR INFORMATION IS 100% SAFE. WE NEVER SHARE YOUR INFORMATION WITH ANYONE. BY CLICKING “SUBMIT” I AGREE TO
+          RECEIVE AUTO AND PRE-MADE E-MAILS AT THE E-MAIL PROVIDED. I UNDERSTAND THAT MY CONSENT IS NOT A CONDITION TO
+          PURCHASE ANYTHING.
+        </p>
+      </div>
+    </div>
+    <div class="relative flex justify-center items-center col-span-1">
       <Picture
-        class="mx-auto rounded-xl border-1 border-ibm-black border"
+        class="bounce-slow select-none md:rotate-12"
         width={600}
-        height={500}
+        height={400}
         widths={[400, 768]}
         sizes="100vw, 432px"
-        aspectRatio="1600:900"
+        aspectRatio="400:300"
         alt="sa"
-        src={'/images/cta.png'}
+        src={'/images/laptop-image.png'}
       />
-
-      <div class="mb-8 max-w-lg">
-        <ul class="text-left">
-          <li class="mb-2 md:mb-4 text-base md:text-lg">
-            ✅ <span class="ml-2 md:ml-4">Black Box, Grey Box, White Box Approach</span>
-          </li>
-          <li class="mb-2 md:mb-4 text-base md:text-lg">
-            ✅ <span class="ml-2 md:ml-4"
-              >Specific use cases for: Software Development Company, SMB's, Large Companies
-            </span>
-          </li>
-          <li class="mb-2 md:mb-4 text-base md:text-lg">
-            ✅ <span class="ml-2 md:ml-4">Time Estimation</span>
-          </li>
-        </ul>
-        <div class="w-full flex justify-center">
-          <button class="cta-button-lg cursor-pointer mx-auto md:w-72 mt-8" id="scrollToOptButton2"
-            >Yes send me the paper.</button
-          >
-        </div>
-      </div>
     </div>
   </div>
 </Layout>

@@ -1,0 +1,31 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+import { Picture } from '@astrojs/image/components';
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-4 md:py-8">
+      <div class="text-center max-w-screen-lg mx-auto">
+        <h1
+          class="cover-title text-ibm-black text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+        >
+          Security assement <span class="text-primary">price</span> calculator.
+        </h1>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto bg-paper rounded-xl p-4 py-12 px-10">
+      <div class="max-w-4xl">
+        <input class="w-full" />
+      </div>
+    </div>
+  </div>
+</Layout>
