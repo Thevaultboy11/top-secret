@@ -65,14 +65,7 @@ const {
           )
         }
         <div class="max-w-5xl mx-auto">
-          {
-            subtitle && (
-              <p
-                class="	  cover-sub-title text-3xl  leading-10  md:text-5xl  mb-6 dark:text-slate-300"
-                set:html={subtitle}
-              />
-            )
-          }
+          {subtitle && <p class="	  cover-sub-title text-3xl  leading-10  md:text-5xl  mb-6  " set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md mx-auto flex items-center justify-center gap-4">
             {
               callToAction && (

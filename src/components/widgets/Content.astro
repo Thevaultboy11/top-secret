@@ -38,7 +38,7 @@ const {
         <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
           {highlight && (
             <div class="bg-accent mx-auto  px-4 pb-2 text-center h-8 rounded-full bg-opacity-40 max-w-max">
-              <p class="text-base  text-white dark:text-blue-200 font-semibold uppercase" set:html={highlight} />
+              <p class="text-base  text-white   font-semibold uppercase" set:html={highlight} />
             </div>
           )}
           {title && (
@@ -48,9 +48,7 @@ const {
             />
           )}
 
-          {subtitle && (
-            <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400" set:html={subtitle} />
-          )}
+          {subtitle && <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted  " set:html={subtitle} />}
         </div>
       )
     }
@@ -58,7 +56,7 @@ const {
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="md:basis-1/2 self-start">
-        {content && <div class="text-lg dark:text-slate-400" set:html={content} />}
+        {content && <div class="text-lg  " set:html={content} />}
 
         {
           items && (
@@ -71,8 +69,8 @@ const {
                     </div>
                   </div>
                   <div class="ml-4">
-                    {title2 && <h3 class="text-lg font-medium leading-6 dark:text-white">{title2}</h3>}
-                    {description && <p class="mt-2 text-muted dark:text-slate-400" set:html={description} />}
+                    {title2 && <h3 class="text-lg font-medium leading-6  ">{title2}</h3>}
+                    {description && <p class="mt-2 text-muted  " set:html={description} />}
                   </div>
                 </div>
               ))}

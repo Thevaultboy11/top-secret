@@ -24,9 +24,7 @@ const {
 <section class="relative not-prose">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="py-12 md:py-20">
-      <div
-        class="max-w-3xl mx-auto text-center p-6 rounded-xl shadow-xl dark:shadow-none dark:border dark:border-slate-600"
-      >
+      <div class="max-w-3xl mx-auto text-center p-6 rounded-xl shadow-xl">
         {
           title && (
             <h2
@@ -35,7 +33,7 @@ const {
             />
           )
         }
-        {subtitle && <p class="text-xl text-muted dark:text-slate-400" set:html={subtitle} />}
+        {subtitle && <p class="text-xl text-muted  " set:html={subtitle} />}
         {
           typeof callToAction === 'string' ? (
             <Fragment set:html={callToAction} />

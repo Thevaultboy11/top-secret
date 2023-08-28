@@ -28,11 +28,11 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
   {
     image && (
       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400   rounded shadow-lg">
           {image && (
             <Picture
               src={image}
-              class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+              class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400  "
               widths={[400, 900]}
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.title}
@@ -49,7 +49,7 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
     <header>
       <div class="mb-1">
         <span class="text-sm">
-          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block dark:text-gray-400" />
+          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block" />
           <time class="name-title" datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
           {
             post.category && (
@@ -64,7 +64,7 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
           }
         </span>
       </div>
-      <h2 class="text-xl md:text-3xl leading-10 font-bold font-heading dark:text-slate-300">
+      <h2 class="text-xl md:text-3xl leading-10 font-bold font-heading">
         {
           link ? (
             <a class="hover:text-primary  transition ease-in duration-200" href={link}>
@@ -77,7 +77,7 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
       </h2>
     </header>
 
-    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-xl ">{post.excerpt}</p>}
+    {post.excerpt && <p class="flex-grow text-muted   text-xl ">{post.excerpt}</p>}
     <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer>

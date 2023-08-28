@@ -10,7 +10,7 @@ const CONFIG = {
     '🚀 Empowering cyber security solutions by young minds. Claim your free security assessment. Limited availability.',
   defaultImage: defaultImage,
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: 'light:only', // Values: "system" | "light" | "dark" | "light:only" | ""
 
   language: 'en',
   textDirection: 'ltr',

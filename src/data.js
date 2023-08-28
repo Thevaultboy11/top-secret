@@ -55,7 +55,7 @@ export const headerData = {
   footNote: `
   <div class='flex justify-center items-center gap-x-4'>
     <span class="w-20 h-8 md:w-20 md:h-8 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(/images/blacklogo.png)]"></span>
-    <p>Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://starshipshield.com/"> Starship Shield</a> · All rights reserved.</p>
+    <p>Made by <a class="text-blue-600 hover:underline  " href="https://starshipshield.com/"> Starship Shield</a> · All rights reserved.</p>
   </div>
    `,
 };
