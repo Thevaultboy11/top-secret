@@ -54,7 +54,7 @@ const { post, url } = Astro.props;
         post.image ? (
           <Picture
             src={post.image}
-            class="max-w-full lg:max-w-6xl mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            class="max-w-full lg:max-w-6xl mx-auto mb-6 sm: rounded-xl  bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post.description || ''}
@@ -74,7 +74,7 @@ const { post, url } = Astro.props;
       }
     </header>
     <div
-      class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
+      class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img: rounded-xl prose-img:shadow-lg mt-8"
     >
       {
         post.Content ? (

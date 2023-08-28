@@ -127,7 +127,6 @@
   font-weight: 500;
   line-height: 1.3em;
   font-family: 'Nunito', sans-serif;
-
 }
 .name-title {
   text-align: left;
@@ -179,6 +178,22 @@
     color: white;
   }
   
+.blog-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 1000;
+  text-align: start;
+  letter-spacing: -3em}
+  .floater {
+    animation: floatUpDown 2s ease-in-out infinite;
+  }
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
   .btn {
     @apply inline-flex items-center justify-center rounded-full shadow-md  bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-accent focus:ring-2 focus:ring-offset-2 ;
   }
@@ -196,8 +211,19 @@
     backdrop-filter: blur(20px); /* Adjust the blur amount as needed */
     background: radial-gradient(#5a36ff, #F4F4F4);
   }
+  
 }
-
+.list-tracing {
+  
+  word-spacing: 0.5em;
+@apply text-base font-semibold
+}
+.blog-tracing {
+  word-spacing: -1em;
+}
+.image-tracing {
+  word-spacing: 0.1em;
+}
 #navbar.scroll {
   @apply shadow-md md:shadow-lg ;
 }
