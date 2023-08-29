@@ -2,7 +2,7 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 import { Picture } from '@astrojs/image/components';
-
+import CalculatorForm from '../../components/AssementCalculator';
 const meta = {
   title: SITE.title,
   description: SITE.description,
@@ -23,9 +23,7 @@ const meta = {
       </div>
     </div>
     <div class="max-w-5xl mx-auto bg-paper rounded-xl p-4 py-12 px-10">
-      <div class="max-w-4xl">
-        <input class="w-full" />
-      </div>
+      <CalculatorForm client:load />
     </div>
   </div>
 </Layout>
