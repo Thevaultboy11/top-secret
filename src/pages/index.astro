@@ -1,0 +1,212 @@
+---
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+import Cta from "~/components/Cta.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import LatestPosts from "~/components/blog/LatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+import { Picture } from "@astrojs/image/components";
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    callToAction={{ text: "Experience Hybrid", href: "/blog" }}
+    image={{
+      src: import("~/assets/images/hero.jpg"),
+      alt: "AstroWind Hero Image",
+    }}
+  >
+    <Fragment slot="title">
+      Do you want
+      <span class="text-accent highlight">amplified security?</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <p
+        class="text-white text-base break-line text-center leading-tight max-w-lg mx-auto"
+      >
+        Defining boundaries for a quality security assessment is hard. We make
+        it easy. Access our <span class="font-semibold">Free</span> 'Hybrid assessment'
+        explenation bellow.
+      </p>
+    </Fragment>
+  </Hero>
+
+  <section
+    class:list={["pt-0 md:pt-0", "lg:mt-20    py-16 md:py-20 not-prose"]}
+  >
+    <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+      <div
+        class="mb-10 md:mx-auto flex text-center gap-y-2 items-center justify-center flex-col md:mb-12 max-w-3xl"
+      >
+        <p class="info-title">Security</p>
+        <h2 class="sub-title">
+          We’ve worked with 3+ companies with over 1000+ users
+        </h2>
+        <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted"></p>
+      </div>
+    </div>
+    <div
+      class="w-full lg:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 px-4 mb-16"
+    >
+      <div class="info-card mb-4">
+        <Picture
+          class="mx-auto rounded-xl bg-gray-500"
+          width={600}
+          height={500}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="1600:900"
+          alt="sa"
+          src={"/images/case-study/card-case-study1.png"}
+        />
+        <h1 class="text-3xl leading-10 mt-2">Case study</h1>
+        <p class="text-xl w-full md:w-2/3">
+          See our happy clients running their business securely, flawlessly, and
+          scaling to riches.
+        </p>
+        <a href="/story-type/case-study" class="cta-button-sm md:w-60"
+          >View Case Studies</a
+        >
+      </div>
+      <div class="info-card">
+        <Picture
+          class="mx-auto rounded-xl bg-gray-500 shadow-lg"
+          width={600}
+          height={500}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="1600:900"
+          alt="sa"
+          src={"/images/client_win/card-client-wins1.png"}
+        />
+        <h1 class="text-3xl leading-10 mt-2">Client wins</h1>
+        <p class="text-xl w-full md:w-2/3">
+          Scroll our forever-updating client wins vault - showcasing Founders
+          celebrating the little wins to extraordinary gains.
+        </p>
+        <a href="/story-type/client-wins" class="cta-button-sm md:w-60"
+          >View Client Wins</a
+        >
+      </div>
+    </div>
+  </section>
+  <div class="grid grid-cols-1 md:grid-cols-12 p-4 gap-4 mb-16">
+    <div class="col-span-6 px-8 pt-12 overflow-clip hidden md:block">
+      <div class="mx-auto rounded-xl self-center">
+        <img
+          class="w-full w-max-4xl h-full object-cover aspect-[3/3] rounded-xl"
+          src="/images/about/card-aboutt3.gif"
+          alt="sa"
+        />
+      </div>
+    </div>
+    <div class="bg-paper col-span-6 max-w rounded-xl h-full p-8 py-24">
+      <div class="flex flex-col items-center gap-y-2 text-center">
+        <p
+          class="text-3xl leading-10 md:text-4xl font-semibold uppercase italic"
+        >
+          About us
+        </p>
+        <h1 class="text-4xl md:text-6xl font-bold">Starship Shield</h1>
+        <p class="text-xl mt-8">
+          Starship Shield is an Agency created for all business owners to easily
+          amplify their security and retain customer satisfaction.
+        </p>
+      </div>
+
+      <p class="mt-8 text-xl text-center">
+        Founded this year by innovators. We’ve worked with <b>3+</b> companies with
+        over <b>1000+ users</b>, over a one-month period our clients retained
+        customer satisfaction.
+      </p>
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 mt-16 w-full lg:max-w-2xl gap-y-4"
+      >
+        <div class="flex flex-col items-center justify-center">
+          <h1 class="text-6xl md:text-4xl font-extrabold text-primary">3</h1>
+          <p class="text-primary font-semibold">Companies</p>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <h1 class="text-6xl md:text-4xl font-extrabold text-primary">3000</h1>
+          <p class="text-primary font-semibold">Secured Users</p>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <h1 class="text-6xl md:text-4xl font-extrabold text-primary">5</h1>
+          <p class="text-primary font-semibold">Applications tested</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Content Widget **************** -->
+
+  <div class="w-full flex flex-col items-center gap-y-8 p-4">
+    <div class="info-title">Free resources</div>
+    <h1 class="sub-title md:w-1/2 text-center">
+      Ready to start getting a torrential security boost?
+    </h1>
+    <div
+      class="w-full bg-paper max-w-4xl rounded-xl min-h-96 px-8 py-16 overflow-clip relative"
+    >
+      <Picture
+        class="mx-auto rounded-full z-10 bg-gray-500 shadow-lg absolute top-8 right-8"
+        width={200}
+        height={200}
+        widths={[400, 768]}
+        sizes="100vw, 432px"
+        aspectRatio="400:400"
+        alt="sa"
+        src={"/images/pdf-report/pdf-cover2.png"}
+      />
+      <h1 class="text-3xl leading-10 mb-4">Define a scope in 30 minutes.</h1>
+      <p class="tex-xl md:w-1/2 mt-4">
+        Paper provides valuable insights for defining a security audit scope
+        effectively in the shortest time possible.
+      </p>
+      <a href="/resources/scope-paper" class="cta-button-sm md:w-60 mt-8"
+        >Donwload now</a
+      >
+    </div>
+    <div
+      class="w-full bg-paper max-w-4xl rounded-xl min-h-96 px-8 py-16 overflow-clip relative"
+    >
+      <Picture
+        class="absolute bg-transparent bounce-slow select-none -right-16 -bottom-8 rotate-12"
+        width={300}
+        height={200}
+        widths={[400, 768]}
+        sizes="100vw, 432px"
+        aspectRatio="400:300"
+        alt="sa"
+        src={"/images/softwear/softwear-coverr2.png"}
+      />
+      <h1 class="text-3xl leading-10 mb-4">
+        Security assement price calculator
+      </h1>
+      <p class="tex-2xl md:w-1/2">
+        If you are in a hurry, and want to calculate the price of your security
+        assment. Witin 15 minutes you can have a rough estimate.
+      </p>
+      <a
+        href="/resources/assesment-calculator"
+        class="cta-button-sm md:w-60 mt-8">Calculate now</a
+      >
+    </div>
+  </div>
+  <Cta />
+</Layout>

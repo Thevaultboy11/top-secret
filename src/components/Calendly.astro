@@ -1,0 +1,28 @@
+---
+component: true;
+---
+
+<script setup>
+  import { onMount } from 'astro';
+
+  // Fetch Calendly code and render widget
+  onMount(async () => {
+    const response = await fetch('https://api.example.com/calendly-code'); // Replace with your API endpoint URL
+    const { code } = await response.json();
+
+    const script = document.createElement('script');
+    script.innerHTML = code;
+    script.async = true;
+
+    document.body.appendChild(script);
+  });
+</script>
+
+<div class="p-4">
+  <div
+    class="calendly-inline-widget w-full"
+    data-url="https://calendly.com/starshipshield/hybrid-call"
+    style="min-width:320px;height:700px;"
+  >
+  </div>
+</div>

@@ -1,0 +1,94 @@
+---
+import { Icon } from 'astro-icon';
+import { Picture } from '@astrojs/image/components';
+
+interface CallToAction {
+  text: string;
+  href: string;
+  icon?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  content?: string;
+  callToAction?: string | CallToAction;
+  callToAction2?: string | CallToAction;
+  image?: string | any; // TODO: find HTMLElementProps
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  content = await Astro.slots.render('content'),
+  callToAction = await Astro.slots.render('callToAction'),
+  callToAction2 = await Astro.slots.render('callToAction2'),
+  image = await Astro.slots.render('image'),
+} = Astro.props;
+---
+
+<section
+  class="relative h-300 md:h-screen md:-mt-20 xl:-mt-20 bg-cover bg-center mb-16"
+  style="background-image: url('/images/conference.jpeg');  box-shadow: 0px 12px 10px 0px #6929c2;"
+>
+  <div>
+    <div
+      class="absolute w-full h-full inset-0 opacity-70"
+      style="background-image: linear-gradient(
+      0deg,
+      hsl(265deg 65% 46%) 0%,
+      hsl(265deg 65% 46%) 13%,
+      hsl(265deg 65% 46%) 25%,
+      hsl(260deg 100% 29%) 37%,
+      hsl(0deg 0% 0%) 50%,
+      hsl(339deg 0% 0%) 63%,
+      hsl(0deg 0% 0%) 75%,
+      hsl(339deg 0% 0%) 87%,
+      hsl(0deg 0% 0%) 100%
+    );
+    
+    "
+    >
+    </div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 md:pt-20">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+    <div class="py-12">
+      <div class="text-center pb-10 md:pb-16 max-w-screen-xl mx-auto">
+        {
+          title && (
+            <h1
+              class="cover-title text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              set:html={title}
+            />
+          )
+        }
+        <div class="max-w-5xl mx-auto">
+          {subtitle && <p class="	  cover-sub-title text-3xl  leading-10  md:text-5xl  mb-6  " set:html={subtitle} />}
+          <div class="max-w-xs sm:max-w-md mx-auto flex items-center justify-center gap-4">
+            {
+              callToAction && (
+                <div class="flex">
+                  {typeof callToAction === 'string' ? (
+                    <Fragment set:html={callToAction} />
+                  ) : (
+                    <a
+                      class="cta-button-lg text-lg md:text-2xl mt-4 "
+                      href={callToAction?.href}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {callToAction?.text}
+                    </a>
+                  )}
+                </div>
+              )
+            }
+          </div>
+        </div>
+        {content && <Fragment set:html={content} />}
+      </div>
+    </div>
+  </div>
+</section>
