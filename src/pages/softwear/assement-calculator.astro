@@ -1,8 +1,8 @@
 ---
-import { SITE } from '~/config.mjs';
-import Layout from '~/layouts/PageLayout.astro';
-import { Picture } from '@astrojs/image/components';
-import CalculatorForm from '../../components/AssementCalculator';
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+import { Picture } from "@astrojs/image/components";
+import CalculatorForm from "../../components/AssementCalculator";
 const meta = {
   title: SITE.title,
   description: SITE.description,
@@ -11,7 +11,7 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-4 md:py-8">
       <div class="text-center max-w-screen-lg mx-auto">
@@ -22,7 +22,7 @@ const meta = {
         </h1>
       </div>
     </div>
-    <div class="max-w-5xl mx-auto bg-paper rounded-xl p-4 py-12 px-10">
+    <div class="max-w-5xl mx-auto relative bg-paper rounded-xl p-4 py-12 px-10">
       <CalculatorForm client:load />
     </div>
   </div>

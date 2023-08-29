@@ -13,12 +13,26 @@ function CalculatorForm() {
     sub - how much subnets are there
     s - number of services
 */ 
-  const [{x,  k, i, m, p, r, n, sub, s}, setPriceVariables  ] = useState<any>({x:0,  k:0, i: 0, m:0, p:0, r: 0, n:0, sub:0, s:0 })
+  const [{x,  k, i, m, p, r, n, sub, s}, setPriceVariables  ] = useState<any>({x:0,  k:1, i: 0, m:0, p:0, r: 0, n:0, sub:0, s:0 })
   const [submitState, setSubmitState] = useState(0);
- 
+  const [FullPrice, setFullPrice] = useState(0);
+  const [{isOpen, text}, setModalData] = useState({isOpen: false, text:""});
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.body.style.overflow = 'hidden'; // Disable scrolling
+  //   } else {
+  //     document.body.style.overflow = ''; // Re-enable scrolling
+  //   }
+
+  //   return () => {
+  //     document.body.style.overflow = ''; // Ensure scrolling is re-enabled when the component unmounts
+  //   };
+  // }, [isOpen]);
+
   useEffect(() => {
     if (submitState === 2) {
       const timeoutId = setTimeout(() => {
+        console.log('radi')
         setSubmitState(3);
       }, 3000);
 
@@ -30,15 +44,32 @@ function CalculatorForm() {
   const calculatePrice = () => {
     let result 
     if (x === 0) {
+        if ((i == 0) || (m == 0) || (p == 0)) {
+          setModalData({isOpen: true, text: 'Enter the number of inputs, the number of pages, and third party software for you web application.'})
+          return
+        }
         result = ((((i-m)*30 + 60) * k) / 60) * 100
     }else if (x == 1) {
-        result = ((((i-m)*30 + 60) * k) / 60) * 100
+      if ((i == 0) || (m == 0) || (p == 0)) {
+        setModalData({isOpen: true, text: 'Enter the number of inputs, the number of pages, and third party software for you mobile application.'})
+        return
+      }
+      result = ((((i-m)*30 + 60) * k) / 60) * 100
     } else if (x == 2) {
+        if (r == 0) {
+          setModalData({isOpen: true, text: 'Enter the number of API endpoints.'})
+          return
+        }
         result = (((r * 30) * k) / 60) * 100
     }else {
+      if ((s == 0) || (sub == 0)) {
+        setModalData({isOpen: true, text: 'Enter the number of devices and subnets.'})
+        return
+      }
         result = (((s * 40) * n) / 60) * 100
     }
-    return result
+    setSubmitState(2)
+    setFullPrice(result)
   }
   const handleOptionChange = (event) => {
     setPriceVariables((prevObject) => ({
@@ -63,7 +94,7 @@ function CalculatorForm() {
       </div>
     )
   }
-
+  console.log(submitState, submitState == 3)
   if (submitState == 3) {
     const type_scope = ['Web Application assesment', 'Mobile Application assesment','API assessment', 'Network Assessment']
     const type_assessment = ['White box', 'Gray box','Black box']
@@ -78,25 +109,42 @@ function CalculatorForm() {
             For the {type_scope[x]}
           </li>
           <li>
-            The {x !== 3 ? type_assessment[k-1] : type_network[n]} assment
+            The {x !== 3 ? type_assessment[k-1] : type_network[n]} assment.
            </li>
            <li>
               With the number of {type_multiplyer[k]} {type_multiplyer_text[k]}
            </li>
         </ul>
         <div className='text-center'>
-          <h1 className='text-2xl'>The price for a regular security assment: {calculatePrice()}$</h1>
-          <h1 className='text-2xl'>Hybrid model <span className='text-primary  line-through'> {calculatePrice()}$</span></h1>
+          <h1 className='text-2xl'>The price for a regular security assment: {FullPrice}$</h1>
+          <h1 className='text-2xl'>Hybrid model <span className='text-primary  line-through'> {FullPrice}$</span></h1>
           <p className='text-xl my-4'>Because we are running <b>Amplify security untill Hallowen offer.</b>  <br/>The hybrid assment is <b>free</b>.<a className='ml-4 text-primary' href='/story-type/case-study'>Explanation</a></p>
         </div>
       </>
     )
   }
   return (
+    <>
+    {isOpen && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-white w-full max-w-4xl py-30 rounded-lg shadow ">
+            <button onClick={() => {setModalData({isOpen: false, text: ""})}}  type="button" className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
+                <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                </svg>
+                <span className="sr-only">Close modal</span>
+            </button>
+            <div className="p-6  text-center">
+                <svg className="mx-auto text-primary w-16 h-16 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+                <h3 className="mb-5 md:text-2xl">{text}</h3>
+                </div>
+        </div>
+        )}
+
     <div className="max-w-4xl">
-      <h2 onClick={() => {
-        handlePriceVariables('x', 1);
-      }} className='text-2xl mb-4'>
+      
+      <h2 className='text-2xl mb-4'>
         Choose Assessment Type:
       </h2>
       <div className='grid gap-x-4 grid-cols-1 md:grid-cols-4'>
@@ -223,31 +271,13 @@ function CalculatorForm() {
         </div>
       )}
       <div className='w-full flex justify-center'>  <button className='cta-button-lg  md:w-72 mt-12' onClick={() => {
-        setSubmitState(2)
-        // if (i == 0 || m == 0 || k == 0) {
-        //   alert('You have to insert data to calculate accurately.')
-        //   return
-        // }
-        //  if (r == 0 || k == 0) {
-        //   alert('You have to insert data to calculate accurately.')
-        //   return
-        // }else if (s == 0 || k == 0) {
-        //   alert('You have to insert data to calculate accurately.')
-        //   return
-        // }
+        calculatePrice()
+        
       }}>Calculate the cost</button>
     </div>
     </div>
+    </>
   );  
 }
 
 export default CalculatorForm
-
-/* 
-a
-    Make me react component with these parameters:
-    Number k: 
-    
-  
-
-*/ 
