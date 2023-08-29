@@ -1,18 +1,18 @@
 ---
-import { SITE } from '~/config.mjs';
-import Layout from '~/layouts/PageLayout.astro';
-import Cta from '~/components/Cta.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import { Picture } from '@astrojs/image/components';
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+import Cta from "~/components/Cta.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import LatestPosts from "~/components/blog/LatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+import { Picture } from "@astrojs/image/components";
 
 const meta = {
   title: SITE.title,
@@ -30,15 +30,21 @@ const meta = {
         <h1
           class="cover-title text-2xl my-8 leading-6 text-ibm-black md:text-6xl font-bold leading-tighter tracking-tighter font-heading"
         >
-          How we amplify business's cybersecurity from <span class="text-primary">average</span> to <span
-            class="text-primary">exceptional</span
-          > in one Month. (Even when the number of cyber-attacks increases by 38% annually. )
+          How we amplify business's cybersecurity from <span
+            class="text-primary">average</span
+          > to <span class="text-primary">exceptional</span> in one Month. (Even
+          when the number of cyber-attacks increases by 38% annually. )
         </h1>
-        <p class="text-primary text-center name-title leading-6">
-          Forget about trial offers… Here’s how to secure your application in one month.
+        <p class="text-center name-title leading-6">
+          Forget about trial offers… Here’s how to secure your application in
+          one month.
         </p>
       </div>
-      <div class="max-w-screen-xl p-4 md:p-10 mx-auto">
+      <h1 class="w-full text-center text-4xl text-primary flex justify-center">
+        Our team is working on the video explenation. <br />Coming Septembar. 3.
+        2023
+      </h1>
+      <!-- <div class="max-w-screen-xl p-4 md:p-10 mx-auto">
         <iframe
           width="1280"
           height="720"
@@ -57,8 +63,10 @@ const meta = {
           class="w-full mx-auto block md:hidden"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
-      </div>
-      <div class="cta-button-xl max-w-screen-xl flex justify-center mx-auto cursor-pointer text-center">
+      </div> -->
+      <div
+        class="cta-button-xl max-w-screen-xl flex justify-center mx-auto cursor-pointer text-center"
+      >
         Claim your free hybrid assement strategy call
       </div>
     </div>

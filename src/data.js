@@ -43,7 +43,7 @@ export const headerData = {
         { text: 'About us', href: '/about-us' },
         { text: 'Case studies', href: '/story-type' },
         { text: 'Our method', href: '/hybrid-model' },
-        { text: 'Join Mission', href: '/book-a-meeting' },
+        { text: 'Join Mission', href: '/learn-more' },
       ],
     },
     ],

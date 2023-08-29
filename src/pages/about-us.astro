@@ -1,10 +1,10 @@
 ---
-import { SITE } from '~/config.mjs';
-import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
 
-import Hero from '~/components/widgets/Hero.astro';
-import { Picture } from '@astrojs/image/components';
-import Cta from '~/components/Cta.astro';
+import Hero from "~/components/widgets/Hero.astro";
+import { Picture } from "@astrojs/image/components";
+import Cta from "~/components/Cta.astro";
 
 const meta = {
   title: SITE.title,
@@ -17,8 +17,11 @@ const meta = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Experience Hybrid', href: '/blog' }}
-    image={{ src: import('~/assets/images/hero.jpg'), alt: 'AstroWind Hero Image' }}
+    callToAction={{ text: "Experience Hybrid", href: "/blog" }}
+    image={{
+      src: import("~/assets/images/hero.jpg"),
+      alt: "AstroWind Hero Image",
+    }}
   >
     <Fragment slot="title">
       The
@@ -28,23 +31,33 @@ const meta = {
     <Fragment slot="subtitle">
       <span class="mb-4">
         <p class="text-white text-base break-line text-center leading-tight">
-          To help founders around the world shield from attacks on their customers, save money without dealing with data
-          breaches.
+          To help founders around the world shield from attacks on their
+          customers, save money without dealing with data breaches.
         </p>
         <span class="text-white text-base break-line text-center">
-          <br class="" /> Free We know we will be happy when every founder will not worry about security while spending time
-          with his family and improving customers' experience. At the end of the day, it’s not about us. It's about you.
+          <br class="" /> Free We know we will be happy when every founder will not
+          worry about security while spending time with his family and improving
+          customers' experience. At the end of the day, it’s not about us. It's about
+          you.
         </span>
       </span>
     </Fragment>
   </Hero>
-  <div class="mt-32 w-full text-center flex items-center justify-center flex-col">
+  <div
+    class="mt-32 w-full text-center flex items-center justify-center flex-col"
+  >
     <p class="info-title w-max">Free resources</p>
-    <h1 class="sub-title text-3xl leading-10 md:text-5xl">The 3 Core tenets about building digital castles</h1>
+    <h1 class="sub-title text-3xl leading-10 md:text-5xl">
+      The 3 Core tenets about building digital castles
+    </h1>
   </div>
-  <div class="p-4 flex justify-center items-center flex-col max-w-4xl mx-auto mt-16 gap-y-8">
+  <div
+    class="p-4 flex justify-center items-center flex-col max-w-5xl mx-auto mt-16 gap-y-8"
+  >
     <!-- how to secure a website  -->
-    <div class="bg-paper p-8 md:py-12 md:px-10 rounded-xl w-full grid grid-cols-1 md:grid-cols-2">
+    <div
+      class="bg-paper p-8 md:py-12 md:px-10 rounded-xl w-full grid grid-cols-1 md:grid-cols-2"
+    >
       <div class="grid-cols-1 md:flex md:items-center md:justify-center">
         <Picture
           class="mx-auto rounded-xl bg-gray-500 self-center"
@@ -54,20 +67,26 @@ const meta = {
           sizes="100vw, 432px"
           aspectRatio="500:400"
           alt="sa"
-          src={'/images/interior_spaceship.jpeg'}
+          src={"/images/about/card-about1.png"}
         />
       </div>
       <div class="grid-cols-1">
-        <h1 class="text-3xl leading-10 my-4 text-ibm-black">DO THE BORING WORK</h1>
+        <h1 class="text-3xl leading-10 my-4 text-ibm-black">
+          DO THE BORING WORK
+        </h1>
         <p class="text-lg w-full">
-          Going the extra mile with security is more than just doing busy work. It’s doing what our competition won’t
-          do. Giving customers the best service while having the best security is noteworthy and very valuable. Doing it
-          right no matter the short-term cost. It’s going that extra mile that truly dictates your success.
+          Going the extra mile with security is more than just doing busy work.
+          It’s doing what our competition won’t do. Giving customers the best
+          service while having the best security is noteworthy and very
+          valuable. Doing it right no matter the short-term cost. It’s going
+          that extra mile that truly dictates your success.
         </p>
       </div>
     </div>
     <!-- how to secure a website  -->
-    <div class="bg-paper p-8 md:py-12 md:px-10 rounded-xl w-full grid grid-cols-1 md:grid-cols-2">
+    <div
+      class="bg-paper p-8 md:py-12 md:px-10 rounded-xl w-full grid grid-cols-1 md:grid-cols-2"
+    >
       <div class="grid-cols-1 md:flex md:items-center md:justify-center">
         <Picture
           class="mx-auto rounded-xl bg-gray-500 self-center"
@@ -77,37 +96,42 @@ const meta = {
           sizes="100vw, 432px"
           aspectRatio="500:400"
           alt="sa"
-          src={'/images/interior_spaceship.jpeg'}
+          src={"/images/about/card-about2.png"}
         />
       </div>
       <div class="grid-cols-1">
-        <h1 class="text-3xl leading-10 my-4 text-ibm-black uppercase">Speed is a King</h1>
+        <h1 class="text-3xl leading-10 my-4 text-ibm-black uppercase">
+          Speed is a King
+        </h1>
         <p class="text-lg w-full">
-          Speed is the number one currency in the security of applications. SPEED is more important than perfection. You
-          never know when the next data exposure is coming. A good plan executed now is better than a perfect plan
-          executed next week.
+          Speed is the number one currency in the security of applications.
+          SPEED is more important than perfection. You never know when the next
+          data exposure is coming. A good plan executed now is better than a
+          perfect plan executed next week.
         </p>
       </div>
     </div>
     <!-- how to secure a website  -->
-    <div class="bg-paper p-8 md:py-12 md:px-10 rounded-xl w-full grid grid-cols-1 md:grid-cols-2">
+    <div
+      class="bg-paper p-8 md:py-12 md:px-10 rounded-xl w-full grid grid-cols-1 md:grid-cols-2"
+    >
       <div class="grid-cols-1 md:flex md:items-center md:justify-center">
-        <Picture
-          class="mx-auto rounded-xl bg-gray-500 self-center"
-          width={400}
-          height={300}
-          widths={[400, 768]}
-          sizes="100vw, 432px"
-          aspectRatio="500:400"
-          alt="sa"
-          src={'/images/interior_spaceship.jpeg'}
-        />
+        <div class="mx-auto rounded-xl bg-gray-500 self-center">
+          <img
+            class="w-96 object-cover aspect-[5/4] rounded-xl"
+            src="/images/about/card-aboutt3.gif"
+            alt="sa"
+          />
+        </div>
       </div>
       <div class="grid-cols-1">
-        <h1 class="text-3xl leading-10 my-4 text-ibm-black uppercase">Actions speak louder than words</h1>
+        <h1 class="text-3xl leading-10 my-4 text-ibm-black uppercase">
+          Actions speak louder than words
+        </h1>
         <p class="text-lg w-full">
-          Truth is best left untampered with. Only beginners guarantee security without proof. It’s not the first time
-          these lies have backfired massively and created undeniable damage to the business's reputation.
+          Truth is best left untampered with. Only beginners guarantee security
+          without proof. It’s not the first time these lies have backfired
+          massively and created undeniable damage to the business's reputation.
         </p>
       </div>
     </div>
