@@ -340,7 +340,8 @@ const meta = {
       const nameInput = form.querySelector("#name").value;
       const emailInput = form.querySelector("#email").value;
       const phoneInput = form.querySelector("#phone").value;
-      const apiUrl = "http://localhost:8080/api/create-user";
+      const apiUrl = "http://localhost:8080/api";
+
       const data = {
         fullName: nameInput,
         email: emailInput,
@@ -348,7 +349,7 @@ const meta = {
       };
 
       try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch(`${apiUrl}/create-user`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

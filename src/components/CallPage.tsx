@@ -21,7 +21,7 @@ function CallPage() {
   };
   const onSubmit = (e: any) => {
     e.preventDefault();
-    const apiUrl = "http://localhost:8080/api/create-business";
+    const apiUrl = "http://localhost:8080/api";
     const apiData = {
       fullName: name,
       email: email,
@@ -30,7 +30,7 @@ function CallPage() {
       pentestType: String(security_assessment),
       applicationType: "0", // Replace with the actual value
     };
-    fetch(apiUrl, {
+    fetch(`${apiUrl}/create-business`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
