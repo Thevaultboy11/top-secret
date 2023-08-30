@@ -125,14 +125,55 @@ const meta = {
       >
     </div>
   </div>
-  <div class="mt-32 grid grid-cols-1 md:grid-cols-2 p-4 max-w-5xl mx-auto">
+  <div
+    class="mt-32 relative grid grid-cols-1 md:grid-cols-2 p-4 max-w-5xl mx-auto"
+  >
     <div
-      class="bg-paper col-span-1 h-200 w-full md:w-fit p-4 rounded-xl md:p-8 md:px-16"
+      class="bg-paper col-span-1 h-200 w-full md:w-max p-4 rounded-xl md:p-8 md:px-16"
       id="Opt"
     >
+      <div
+        id="modal"
+        class="absolute w-full hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:max-w-xl z-50 bg-white rounded-lg shadow dark:bg-gray-700"
+      >
+        <div
+          class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Before you go
+          </h3>
+        </div>
+        <!-- Modal body -->
+        <div class="p-6 space-y-6">
+          <p
+            id="modal-content"
+            class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+          >
+            The software is only to show average prices in the cybersecurity
+            market.
+            <br />
+            <br />
+            This should only help you make better decisions and see how the price
+            proposed stands in the industry standard.
+          </p>
+        </div>
+        <!-- Modal footer -->
+        <div
+          class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+        >
+          <a
+            href="/softwear/assesment-calculator"
+            id="close_modal"
+            data-modal-hide="staticModal"
+            type="button"
+            class="text-white bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >Calculator</a
+          >
+        </div>
+      </div>
       <div class="flex flex-col justify-center items-center w-full md:w-96">
         <h1 class="sub-title text-center text-xl md:text-2xl">
-          Enter you details so we can send you the pdf.
+          Enter the details so you can have access.
         </h1>
         <form class="flex w-full flex-col gap-y-2" id="contactForm">
           <label for="name">Name</label>
@@ -142,7 +183,6 @@ const meta = {
             type="text"
             id="name"
             name="name"
-            required
           />
 
           <label for="email">Email</label>
@@ -152,28 +192,25 @@ const meta = {
             type="email"
             id="email"
             name="email"
-            required
           />
 
           <label for="phone">Phone Number</label>
           <input
-            placeholder="Country code / number"
             class="rounded-full w-full p-2 md:p-4"
-            type="tel"
+            type="text"
             id="phone"
             name="phone"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-            required
+            placeholder="(123-45-678)"
           />
 
           <button
             type="submit"
             class="shadow-none cta-button-lg mx-auto md:w-72 my-4"
-            >Send me the white paper</button
+            >Calculate your expenses</button
           >
         </form>
         <p class="text-xl text-center text-paper">
-          P.S. Say goodbye to overpaying.
+          P.S. Say goodbye to unfair prices cyber-sec offer.
         </p>
         <p class="text-xs text-center">
           YOUR INFORMATION IS 100% SAFE. WE NEVER SHARE YOUR INFORMATION WITH
@@ -197,6 +234,7 @@ const meta = {
     </div>
   </div>
 </Layout>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const scrollToOptButton = document.getElementById("scrollToOptButton");
@@ -227,18 +265,54 @@ const meta = {
   });
   //   sending the email
   const form = document.getElementById("contactForm");
+  const modal = document.getElementById("modal");
+  const close_modal = document.getElementById("close_modal");
+  const modal_backdrop = document.getElementById("modal-backdrop");
+  const modal_content = document.getElementById("modal-content");
+
+  close_modal.addEventListener("click", async (event) => {
+    modal.classList.toggle("hidden");
+    modal_backdrop.classList.add("hidden");
+    document.body.style.overflow = "";
+  });
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-
     const nameInput = form.querySelector("#name").value;
     const emailInput = form.querySelector("#email").value;
     const phoneInput = form.querySelector("#phone").value;
-
+    const apiUrl = "http://localhost:8080/api/create-member";
     const data = {
-      user_name: nameInput,
-      user_email: emailInput,
-      message_phone: phoneInput,
+      fullName: String(nameInput),
+      email: String(emailInput),
+      phoneNumber: String(phoneInput),
     };
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.status === 200) {
+        modal.classList.toggle("hidden");
+        modal_backdrop.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      } else {
+        close_modal?.classList.toggle("hidden");
+        modal.classList.toggle("hidden");
+        modal_backdrop.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+        modal_content.innerHTML = `
+        Something went wrong while loading the application. Try reloading the site to fix the problem.<br/><br/>
+        If that does not help please contact us at <a class='text-primary' href='mailto:info@starshipshield.com'>info@starshipshield.com</a>.
+      `;
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   });
 </script>

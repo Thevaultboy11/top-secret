@@ -3,7 +3,6 @@ import { SITE } from "~/config.mjs";
 import Layout from "~/layouts/PageLayout.astro";
 import { Picture } from "@astrojs/image/components";
 import CallPage from "../components/CallPage";
-
 const meta = {
   title: SITE.title,
   description: SITE.description,
@@ -23,8 +22,9 @@ const meta = {
         </h1>
       </div>
     </div>
+
     <form
-      class="max-w-5xl mx-auto relative bg-paper rounded-xl p-4 py-12 px-10"
+      class="max-w-5xl my-12 mx-auto relative bg-paper rounded-xl p-4 py-12 px-10"
     >
       <CallPage client:only />
     </form>

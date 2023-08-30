@@ -25,12 +25,11 @@ function CallPage() {
     const apiData = {
       fullName: name,
       email: email,
-      phoneNumber: number,
+      phoneNumber: String(number),
       businessDescription: business_type,
-      pentestType: security_assessment,
+      pentestType: String(security_assessment),
       applicationType: "0", // Replace with the actual value
     };
-
     fetch(apiUrl, {
       method: "POST",
       headers: {
@@ -38,10 +37,15 @@ function CallPage() {
       },
       body: JSON.stringify(apiData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status == 200) {
+          window.location.href = "/schedule-a-time";
+        } else {
+          console.error(response);
+        }
+      })
       .then((data) => {
         // Handle the response data
-        alert(["Response:", data]);
       })
       .catch((error) => {
         // Handle errors
@@ -102,44 +106,63 @@ function CallPage() {
         What type of penetration test do you need?
       </label>
       <div className="grid gap-x-4 grid-cols-1 md:grid-cols-4 mt-4 w-full">
-        <label className=" flex items-center gap-x-2 col-span-2">
+        <div className="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
           <input
-            className="w-4 h-4"
+            onChange={(e) =>
+              changeFormData("security_assessment", Number(e.target.value))
+            }
+            className="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
             type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
             value={0}
             checked={security_assessment === 0}
+          />
+          <label
+            className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+            htmlFor="inlineRadio1"
+          >
+            Web / Mobile application testing
+          </label>
+        </div>
+        <div className="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
+          <input
             onChange={(e) =>
               changeFormData("security_assessment", Number(e.target.value))
             }
-          />
-          <span className="text-xl ">
-            Web application testing <br />/ Mobile application testing
-          </span>
-        </label>
-        <label className="flex items-center gap-x-2">
-          <input
-            className="w-4 h-4"
+            className="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
             type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
             value={1}
             checked={security_assessment === 1}
-            onChange={(e) =>
-              changeFormData("security_assessment", Number(e.target.value))
-            }
           />
-          <span className="text-xl ">Networking assessment</span>
-        </label>
-        <label className="flex items-center gap-x-2">
+          <label
+            className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+            htmlFor="inlineRadio1"
+          >
+            Networking assesment
+          </label>
+        </div>
+        <div className="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
           <input
-            className="w-4 h-4"
-            type="radio"
-            value={2}
-            checked={security_assessment === 2}
             onChange={(e) =>
               changeFormData("security_assessment", Number(e.target.value))
             }
+            className="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
+            value={3}
+            checked={security_assessment === 3}
           />
-          <span className="text-xl  ">API assessment</span>
-        </label>
+          <label
+            className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+            htmlFor="inlineRadio1"
+          >
+            Api assesment
+          </label>
+        </div>
       </div>
       <div className="flex justify-center">
         <button
