@@ -61,5 +61,5 @@ const OptInPage = () => {
     </>
   );
 };
-//hi guys you are a good hacker! But we are better : ()
+//hi guys you are a good hacker! But we are betterr : ()
 export default OptInPage;
