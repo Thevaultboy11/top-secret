@@ -21,7 +21,7 @@ function CallPage() {
   };
   const onSubmit = (e: any) => {
     e.preventDefault();
-    const apiUrl = "http://localhost:8080/api";
+    const apiUrl = "https://back-end-sooty.vercel.app/api";
     const apiData = {
       fullName: name,
       email: email,
