@@ -16,7 +16,7 @@ const meta = {
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-4 md:py-8">
       <div class="text-center max-w-screen-lg mx-auto">
-        <p class="info-title text-xs md:text-xl max-w-md mx-auto">
+        <p class="info-title text-xs md:text-xl max-w-2xl mx-auto">
           Need a top-notch security report?
         </p>
         <h1
@@ -37,11 +37,13 @@ const meta = {
   </div>
   <!-- the modal-->
 
-  <div class="mt-32 relative grid grid-cols-1 md:grid-cols-2 p-4 max-w-7xl">
+  <div
+    class="mt-32 relative gap-y-8 grid grid-cols-1 md:grid-cols-2 p-4 max-w-7xl"
+  >
     <div class="flex justify-center items-center">
       <Picture
         src={"/images/pdf-report/pdf-coverr.png"}
-        class="mx-auto rotate-6 col-span-4 rounded-xl"
+        class="mx-auto md:rotate-6 col-span-4 rounded-xl"
         width={600}
         height={600}
         widths={[400, 768]}
@@ -160,13 +162,11 @@ const meta = {
     <h2 class="sub-title">What make's a good security scope</h2>
   </div>
   <!-- one rule -->
-  <div class="grid h-200 grid-cols-1 md:grid-cols-3 gap-8 p-4 w-max-5xl">
-    <div
-      class="flex flex-col items-center justify-center p-4 md:p-8 md:px-16 bg-paper rounded-xl text-center"
-    >
+  <div class="grid h-200 grid-cols-1 md:grid-cols-3 gap-8 p-4">
+    <div class="p-4 md:py-8 md:px-16 bg-paper rounded-xl text-center">
       <Picture
         src={"/images/pdf-report/card-pdff1.png"}
-        class="rounded-xl"
+        class="rounded-xl mx-auto"
         width={300}
         height={300}
         widths={[400, 768]}
@@ -197,7 +197,9 @@ const meta = {
         alt="sa"
       />
       <h3 class="text-xl font-bold leading-tight sm:text-2xl font-heading">
-        <a class="transition ease-in duration-200"> The Attack Surface</a>
+        <a class="transition ease-in duration-200 uppercase">
+          The Attack Surface</a
+        >
       </h3>
       <p class="text-muted text-lg">
         Finding the ways that bad actors could use to get into your sensitive
@@ -241,7 +243,7 @@ const meta = {
   </div>
   <div class="mt-32 w-full relative">
     <div
-      class="w-full max-w-4xl md:mx-auto flex flex-col justify-center items-center gap-y-4"
+      class="w-full max-w-4xl md:mx-auto flex flex-col justify-center items-center gap-y-4 p-4"
     >
       <p class="info-title text-center max-w-md">What are you waiting for?</p>
       <h2 class="sub-title text-center">
@@ -253,7 +255,7 @@ const meta = {
         We Can't Wait For You To Experience First Hand How easy it is to make a
         good scope.
       </p>
-      <span class="text-accent highlight mb-1 text-center text-xsm"> </span>
+
       <Picture
         class="mx-auto rounded-xl border-1 border-ibm-black border"
         width={600}

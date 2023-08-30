@@ -24,7 +24,6 @@
     flex-direction: column;
     align-items: left;
     position: relative;
-    overflow: hidden;
     grid-row-gap: 2em;
     transition: box-shadow 0.3s ease-in;
     @apply p-8 md:px-16 md:py-14 md:items-stretch items-start md:gap-x-8;

@@ -1,7 +1,7 @@
 ---
-import { Icon } from 'astro-icon';
-import { SITE } from '~/config.mjs';
-import { getHomePermalink } from '~/utils/permalinks';
+import { Icon } from "astro-icon";
+import { SITE } from "~/config.mjs";
+import { getHomePermalink } from "~/utils/permalinks";
 
 interface Link {
   text?: string;
@@ -23,16 +23,22 @@ export interface Props {
   theme?: string;
 }
 
-const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const {
+  socialLinks = [],
+  secondaryLinks = [],
+  links = [],
+  footNote = "",
+  theme = "light",
+} = Astro.props;
 ---
 
-<footer class:list={['relative border-t border-gray-200   not-prose']}>
+<footer class:list={["relative border-t border-gray-200   not-prose"]}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-6 md:py-8">
       {
         links.map(({ title, links }) => (
-          <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="col-span-6 md:col-span-3 md:col-span-2">
             <div class="  font-medium mb-2">{title}</div>
             {links && Array.isArray(links) && links.length > 0 && (
               <ul class="text-sm">
@@ -71,7 +77,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
             ))}
           </ul>
         ) : (
-          ''
+          ""
         )
       }
 

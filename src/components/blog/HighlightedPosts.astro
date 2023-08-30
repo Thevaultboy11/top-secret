@@ -1,8 +1,8 @@
 ---
-import Grid from '~/components/blog/Grid.astro';
+import Grid from "~/components/blog/Grid.astro";
 
-import { getBlogPermalink } from '~/utils/permalinks';
-import { findPostsByIds } from '~/utils/blog';
+import { getBlogPermalink } from "~/utils/permalinks";
+import { findPostsByIds } from "~/utils/blog";
 
 export interface Props {
   title?: string;
@@ -13,18 +13,18 @@ export interface Props {
 }
 
 const {
-  title = await Astro.slots.render('title'),
-  allPostsText = 'View all posts',
+  title = await Astro.slots.render("title"),
+  allPostsText = "View all posts",
   allPostsLink = getBlogPermalink(),
-  information = await Astro.slots.render('information'),
+  information = await Astro.slots.render("information"),
   postIds = [],
 } = Astro.props;
 
 const posts = await findPostsByIds(postIds);
 ---
 
-<section class="px-4 py-16 mx-auto max-w-7xl lg:py-20">
-  <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
+<section class="px-4 py-16 mx-auto max-w-7xl md:py-20">
+  <div class="flex flex-col md:justify-between md:flex-row mb-8">
     <div class="md:max-w-sm">
       {
         title && (
@@ -46,7 +46,11 @@ const posts = await findPostsByIds(postIds);
       }
     </div>
 
-    {information && <p class="text-muted   lg:text-sm lg:max-w-md" set:html={information} />}
+    {
+      information && (
+        <p class="text-muted   md:text-sm md:max-w-md" set:html={information} />
+      )
+    }
   </div>
 
   <Grid posts={posts} />

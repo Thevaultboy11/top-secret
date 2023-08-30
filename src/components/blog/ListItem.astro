@@ -1,14 +1,14 @@
 ---
-import { Icon } from 'astro-icon';
-import { Picture } from '@astrojs/image/components';
-import PostTags from '~/components/blog/Tags.astro';
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import PostTags from "~/components/blog/Tags.astro";
 
-import { BLOG } from '~/config.mjs';
-import type { Post } from '~/types';
+import { BLOG } from "~/config.mjs";
+import type { Post } from "~/types";
 
-import { getPermalink } from '~/utils/permalinks';
-import { findImage } from '~/utils/images';
-import { getFormattedDate } from '~/utils/utils';
+import { getPermalink } from "~/utils/permalinks";
+import { findImage } from "~/utils/images";
+import { getFormattedDate } from "~/utils/utils";
 
 export interface Props {
   post: Post;
@@ -17,18 +17,18 @@ export interface Props {
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
-const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
+const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, "post") : "";
 ---
 
 <article
-  class={`max-w-md mx-auto md:max-w-none h-screen grid gap-8 md:gap-8 p-8 md:p-8 bg-paper  rounded-xl  ${
-    image ? '' : ''
+  class={`w-full  md:max-w-none max-h-max md:h-screen grid gap-8 md:gap-8 p-8 md:p-8 bg-paper  rounded-xl  ${
+    image ? "" : ""
   }`}
 >
   {
     image && (
-      <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400   rounded shadow-lg">
+      <a class="relative block group" href={link ?? "javascript:void(0)"}>
+        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72  overflow-hidden bg-gray-400   rounded shadow-lg">
           {image && (
             <Picture
               src={image}
@@ -50,14 +50,19 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
       <div class="mb-1">
         <span class="text-sm">
           <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block" />
-          <time class="name-title" datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
+          <time class="name-title" datetime={String(post.publishDate)}
+            >{getFormattedDate(post.publishDate)}</time
+          >
           {
             post.category && (
               <>
-                {' '}
-                ·{' '}
-                <a class="capitalize hover:underline" href={getPermalink(post.category, 'category')}>
-                  {post.category.replaceAll('-', ' ')}
+                {" "}
+                ·{" "}
+                <a
+                  class="capitalize hover:underline"
+                  href={getPermalink(post.category, "category")}
+                >
+                  {post.category.replaceAll("-", " ")}
                 </a>
               </>
             )
@@ -67,7 +72,10 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
       <h2 class="text-xl md:text-3xl leading-10 font-bold font-heading">
         {
           link ? (
-            <a class="hover:text-primary  transition ease-in duration-200" href={link}>
+            <a
+              class="hover:text-primary  transition ease-in duration-200"
+              href={link}
+            >
               {post.title}
             </a>
           ) : (
@@ -77,7 +85,11 @@ const link = !BLOG?.post?.disabled ? getPermalink(post.permalink, 'post') : '';
       </h2>
     </header>
 
-    {post.excerpt && <p class="flex-grow text-muted   text-xl ">{post.excerpt}</p>}
+    {
+      post.excerpt && (
+        <p class="flex-grow text-muted   text-xl ">{post.excerpt}</p>
+      )
+    }
     <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer>
