@@ -6,8 +6,9 @@ import { headerData } from "../../../data";
 import CaseStudy from "../../../components/case-study";
 import { Picture } from "@astrojs/image/components";
 import Icon from "astro-icon";
+import Cta from "~/components/Cta.astro";
 const meta = {
-  title: "Free Penetration Test",
+  title: "Starship Shield Hybrid Assessment",
 };
 ---
 
@@ -59,11 +60,11 @@ const meta = {
         <div class="flex gap-x-2">
           <a
             class="link-case text-xs md:text-base py-4 md:p-0 w-32"
-            href="/story-type/case-study">Case study</a
+            href="/story-type/case-study">Case Studies</a
           >
           <a
-            class="link-case-active w-32 text-xs md:text-base"
-            href="/story-type/client-wins">Client wins</a
+            class="link-case-active w-36 py-4 text-xs md:text-base"
+            href="/story-type/client-wins">Client Wins</a
           >
         </div>
       </div>
@@ -87,5 +88,8 @@ const meta = {
         approach.
       </h1>
     </div>
+  </div>
+  <div class="w-full max-w-7xl p-4 mx-auto">
+    <Cta />
   </div>
 </Layout>

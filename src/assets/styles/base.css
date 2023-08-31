@@ -226,6 +226,15 @@
   z-index: 10;
   display: none;
 }
+.mobile-modal {
+  width: calc(100% - 32px);
+}
+
+@media (max-width: 768px) {
+  .mobile-modal {
+    width: 100%;
+  }
+}
 .list-tracing {
   word-spacing: 0.5em;
   @apply text-base font-semibold;

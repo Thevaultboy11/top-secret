@@ -33,17 +33,21 @@ function CalculatorForm() {
     isOpen: false,
     text: "",
   });
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.style.overflow = 'hidden'; // Disable scrolling
-  //   } else {
-  //     document.body.style.overflow = ''; // Re-enable scrolling
-  //   }
+  useEffect(() => {
+    const modal_backdrop = document.getElementById("modal-backdrop");
 
-  //   return () => {
-  //     document.body.style.overflow = ''; // Ensure scrolling is re-enabled when the component unmounts
-  //   };
-  // }, [isOpen]);
+    if (isOpen) {
+      modal_backdrop.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    } else {
+      modal_backdrop.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Ensure scrolling is re-enabled when the component unmounts
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (submitState === 2) {
@@ -190,8 +194,8 @@ function CalculatorForm() {
             </p>
             <p className="text-white  text-lg">
               {" "}
-              Because we are running the "Amplify Security Until Halloween" offer.{" "}
-              <br />
+              Because we are running the "Amplify Security Until Halloween"
+              offer. <br />
             </p>
             <p className="text-white">
               Our Security Assessment is <b>FREE</b>.
@@ -209,49 +213,54 @@ function CalculatorForm() {
   return (
     <>
       {isOpen && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-white w-full max-w-4xl py-30 rounded-lg shadow ">
-          <button
-            onClick={() => {
-              setModalData({ isOpen: false, text: "" });
-            }}
-            type="button"
-            className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-            data-modal-hide="popup-modal"
-          >
-            <svg
-              className="w-3 h-3"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 14"
+        <div
+          id="modal"
+          className="mobile-modal fixed   top-1/2 left-1/2 transform -translate-x-1/2  -translate-y-1/2 p-4 md:max-w-2xl z-50"
+        >
+          <div className="w-full relative p-4 h-full bg-white rounded-lg shadow dark:bg-gray-700">
+            <button
+              onClick={() => {
+                setModalData({ isOpen: false, text: "" });
+              }}
+              type="button"
+              className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-hide="popup-modal"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-              />
-            </svg>
-            <span className="sr-only">Close modal</span>
-          </button>
-          <div className="p-6  text-center">
-            <svg
-              className="mx-auto text-primary w-16 h-16 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <h3 className="mb-5 md:text-base">{text}</h3>
+              <svg
+                className="w-3 h-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                />
+              </svg>
+              <span className="sr-only">Close modal</span>
+            </button>
+            <div className="p-6  text-center">
+              <svg
+                className="mx-auto text-primary w-16 h-16 "
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <h3 className="mb-5 md:text-base">{text}</h3>
+            </div>
           </div>
         </div>
       )}
@@ -396,8 +405,8 @@ function CalculatorForm() {
                   htmlFor="number_of_input_pages"
                   className="block my-4 text-base"
                 >
-                  No. of Input Fields (every action a user can make to
-                  change a curtain action)
+                  No. of Input Fields (every action a user can make to change a
+                  curtain action)
                   <a className="ml-4 text-primary" href="/">
                     Explanation
                   </a>
@@ -417,8 +426,8 @@ function CalculatorForm() {
                   htmlFor="number_of_micro_services"
                   className="block my-4 text-base"
                 >
-                  No. of Third Party Software(every microservice for
-                  handling logic of the application)
+                  No. of Third Party Software(every microservice for handling
+                  logic of the application)
                 </label>
                 <input
                   type="number"
@@ -441,7 +450,7 @@ function CalculatorForm() {
             />
             <div className="">
               <label htmlFor="number_routes" className="block my-4 text-base">
-                No. of API endpoints {" "}
+                No. of API endpoints{" "}
                 <a className="ml-4 text-primary" href="/">
                   Explanation
                 </a>
