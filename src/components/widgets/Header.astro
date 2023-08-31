@@ -98,7 +98,9 @@ const {
                   ) : (
                     <a
                       class="relative font-medium px-2 py-3 flex items-center transition duration-150 ease-in-out"
-                      href={href !== "/resources" ? href : ""}
+                      href={
+                        href !== "/resources" ? href : "/resources/scope-paper"
+                      }
                       id="dropdownHoverButton"
                     >
                       {text}
@@ -114,7 +116,7 @@ const {
                                   href="/resources/scope-paper"
                                   class="font-medium  block p-2 rounded-md hover:text-primary hover:bg-gray-100"
                                 >
-                                  Define a scope in 30 minutes.
+                                  Define a Security Assessment Scope
                                 </a>
                               </li>
                               <li class="flex items-center justify-center">
@@ -122,7 +124,7 @@ const {
                                   href="/resources/assesment-calculator"
                                   class="font-medium  block p-2 rounded-md hover:text-primary hover:bg-gray-100"
                                 >
-                                  Security assement price calculator
+                                  Security Assessment Pricing Calculator
                                 </a>
                               </li>
                             </ul>

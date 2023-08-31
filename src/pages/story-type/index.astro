@@ -1,14 +1,14 @@
 ---
-import Layout from '../../layouts/PageLayout.astro';
-import Header from '../../components/widgets/Header.astro';
-import Hero from '../../components/widgets/Hero.astro';
-import { headerData } from '../../data';
-import CaseStudy from '../../components/case-study';
-import { Picture } from '@astrojs/image/components';
-import { Link, useRoute } from '@astro/types';
+import Layout from "../../layouts/PageLayout.astro";
+import Header from "../../components/widgets/Header.astro";
+import Hero from "../../components/widgets/Hero.astro";
+import { headerData } from "../../data";
+import CaseStudy from "../../components/case-study";
+import { Picture } from "@astrojs/image/components";
+import { Link, useRoute } from "@astro/types";
 
 const meta = {
-  title: 'Free Penetration Test',
+  title: "Free Penetration Test",
 };
 ---
 
@@ -27,7 +27,7 @@ const meta = {
       sizes="100vw, 432px"
       aspectRatio="1600:900"
       alt="sa"
-      src={'/images/conference.jpeg'}
+      src={"/images/conference.jpeg"}
     />
     <div
       class="absolute w-full h-full inset-0 opacity-70"
@@ -52,16 +52,20 @@ const meta = {
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-4 md:py-8">
       <div class="text-center max-w-screen-lg mx-auto">
-        <p class="info-title max-w-md mx-auto">Secured 3 000+ active users</p>
-        <h1 class="cover-title text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+        <p class="info-title max-w-md mx-auto">Secured 3000+ Users</p>
+        <h1
+          class="cover-title text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+        >
           Real companies, real security.
         </h1>
       </div>
     </div>
-    <div class="bg-paper rounded-full shadow-lg max-w-2xl p-4 mx-auto flex gap-x-2 justify-center items-center">
+    <div
+      class="bg-paper rounded-full shadow-lg max-w-2xl p-4 mx-auto flex gap-x-2 justify-center items-center"
+    >
       <p class="text-2xl uppercase text-primary font-bold">Category</p>
-      <a class="link-case-active w-40">Case study</a>
-      <a class="link-case w-40">Client wins</a>
+      <a class="link-case-active w-40">Case Studies</a>
+      <a class="link-case w-40">Client Wins</a>
     </div>
   </div>
   <div class="mt-32"></div>

@@ -55,11 +55,11 @@ function CallPage() {
   return (
     <form action="/schedule-a-time" onSubmit={(e) => onSubmit(e)} className="">
       <label className="text-xl" htmlFor="name">
-        Name
+        Full Name
       </label>
       <input
         onChange={(e) => changeFormData("name", e.target.value)}
-        placeholder="Name"
+        placeholder="John Doe"
         className="rounded-full w-full p-2 md:p-4 mb-6"
         type="text"
         id="name"
@@ -68,11 +68,11 @@ function CallPage() {
       />
 
       <label className="text-xl" htmlFor="phone">
-        Your email
+        Email Address
       </label>
       <input
         onChange={(e) => changeFormData("email", e.target.value)}
-        placeholder="example@buisnessemail.com"
+        placeholder="example@business.com"
         className="rounded-full w-full p-2 md:p-4 mb-6"
         type="email"
         id="email"
@@ -85,7 +85,7 @@ function CallPage() {
       </label>
       <input
         onChange={(e) => changeFormData("number", e.target.value)}
-        placeholder="Country code / number"
+        placeholder="+123 456 789"
         className="rounded-full w-full p-2 md:p-4 mb-6"
         type="tel"
         id="phone"
@@ -93,17 +93,17 @@ function CallPage() {
         required
       />
       <label className="text-xl" htmlFor="phone">
-        About your buisness
+        About Your Business
       </label>
       <input
         onChange={(e) => changeFormData("business_type", e.target.value)}
-        placeholder="Startup/Software development company"
+        placeholder="E-Commerce Company"
         className="rounded-full w-full p-2 md:p-4 mb-6"
         type="string"
         required
       />
       <label className="text-xl ">
-        What type of penetration test do you need?
+        What type of security assessment do you need?
       </label>
       <div className="grid gap-x-4 grid-cols-1 md:grid-cols-4 mt-4 w-full">
         <div className="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
@@ -122,7 +122,7 @@ function CallPage() {
             className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
             htmlFor="web-mobile"
           >
-            Web / Mobile application testing
+            Web/Mobile Application Testing
           </label>
         </div>
         <div className="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
@@ -141,7 +141,7 @@ function CallPage() {
             className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
             htmlFor="networking-assement"
           >
-            Networking assesment
+            Internal/External Network Testing
           </label>
         </div>
         <div className="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
@@ -160,7 +160,7 @@ function CallPage() {
             className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
             htmlFor="api-assesment"
           >
-            Api assesment
+            API Testing
           </label>
         </div>
       </div>
@@ -169,7 +169,7 @@ function CallPage() {
           type="submit"
           className="cursor-pointer cta-button-lg md:w-80 mt-8"
         >
-          Schedule a time that fits you.
+          Schedule a time that fits you
         </button>
       </div>
     </form>

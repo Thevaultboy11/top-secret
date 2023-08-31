@@ -16,23 +16,23 @@ const meta = {
     <div class="py-4 md:py-8">
       <div class="text-center max-w-screen-lg mx-auto">
         <p class="info-title text-xs md:text-xl max-w-xl mx-auto">
-          What is the price for security?
+          What is the price you pay for security?
         </p>
         <h1
           class="cover-title text-ibm-black text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
         >
-          Security assement <span class="text-primary">price</span> calcualtor.
+          Security assement <span class="text-primary">price</span> calculator
         </h1>
         <p
           class="text-ibm-black text-base break-line text-center leading-tight max-w-lg mx-auto"
         >
-          Do you think the price is a bit off with your ? Calculate the avarage
-          costs of security assements Even if you are not a technical person : )
+          Calculate the realistic average price of a standard security
+          assessment.
         </p>
         <button
           id="scrollToOptButton"
           class="cta-button-lg mx-auto md:w-72 mt-12"
-          >Calculate you expenses</button
+          >Calculate Your Expenses</button
         >
       </div>
     </div>
@@ -41,8 +41,8 @@ const meta = {
   <div
     class="mt-32 max-w-7xl mx-auto flex text-center flex-col justify-center items-center"
   >
-    <p class="info-title max-w-md mx-auto">#SecurityRules</p>
-    <h2 class="sub-title">What make's a good security scope</h2>
+    <p class="info-title max-w-md mx-auto">Security</p>
+    <h2 class="sub-title">The 3 Core Pillars</h2>
   </div>
   <!-- one rule -->
   <div
@@ -61,15 +61,14 @@ const meta = {
         aspectRatio="300:300"
         alt="sa"
       />
-      <h3 class="text-xl font-bold leading-tight sm:text-2xl font-heading">
+      <h3 class="text-xl font-bold leading-tight sm:text-xl font-heading">
         <a class="transition ease-in duration-200 uppercase"
           >Solving the confusing calculations
         </a>
       </h3>
       <p class="text-muted text-lg">
-        No need to strain your brain over prices anymore; no more confusing
-        calculations for penetration test pricing. Simply provide us with the
-        data, and we give you the price.
+        No need to strain your brain over security assessment prices. <br
+        />Input the data, we give you the final price.
       </p>
     </div>
     <div class="p-4 md:p-8 md:px-16 bg-paper rounded-xl text-center">
@@ -83,15 +82,14 @@ const meta = {
         aspectRatio="300:300"
         alt="sa"
       />
-      <h3 class="text-xl font-bold leading-tight sm:text-2xl font-heading">
+      <h3 class="text-xl font-bold leading-tight sm:text-xl font-heading">
         <a class="transition ease-in duration-200 uppercase">
-          Expanding your free time</a
+          Saving Your Time</a
         >
       </h3>
       <p class="text-muted text-lg">
-        Save time with our calculator, rather than hunting for the right price
-        for a penetration test. Just enter the data, and within 1 hour, it's all
-        taken care of.
+        Instead of hunting for a good security assessment price, save your time,
+        give us the data and we do the rest.
       </p>
     </div>
     <div
@@ -107,22 +105,22 @@ const meta = {
         aspectRatio="300:300"
         alt="sa"
       />
-      <h3 class="text-xl font-bold leading-tight sm:text-2xl font-heading">
+      <h3 class="text-xl font-bold leading-tight sm:text-xl font-heading">
         <a class="transition ease-in duration-200 uppercase"
-          >Solving the confusing calculations
+          >Expertise you can trust
         </a>
       </h3>
       <p class="text-muted text-lg">
-        No need to strain your brain over prices anymore; no more confusing
-        calculations for penetration test pricing. Simply provide us with the
-        data, and we give you the price.
+        Now you can rely on someone to give you accurate data about security
+        assessment prices. <br />Without dragging you through endless meetings
+        and calls.
       </p>
     </div>
     <div
       class="col-span-1 md:col-span-3 w-full flex justify-center items-center"
     >
       <button class="cta-button-lg mx-auto md:w-72 mt-8" id="scrollToOptButton2"
-        >I want to calcualte the price.</button
+        >Calculate The Price</button
       >
     </div>
   </div>
@@ -140,7 +138,7 @@ const meta = {
           class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
         >
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-            Before you go
+            Before You Go
           </h3>
         </div>
         <!-- Modal body -->
@@ -149,12 +147,11 @@ const meta = {
             id="modal-content"
             class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
           >
-            The software is only to show average prices in the cybersecurity
-            market.
+            Our calculator shows you the average prices in the industry.
             <br />
             <br />
-            This should only help you make better decisions and see how the price
-            proposed stands in the industry standard.
+            We can help you make better decisions and see how the price stands in
+            the industry standard.
           </p>
         </div>
         <!-- Modal footer -->
@@ -176,21 +173,21 @@ const meta = {
         class="flex flex-col justify-center items-center w-full md:w-96"
       >
         <h1 class="sub-title text-center text-xl md:text-2xl">
-          Enter the details so you can have access.
+          GET ACCESS NOW
         </h1>
         <form class="flex w-full flex-col gap-y-2" id="contactForm">
-          <label for="name">Name</label>
+          <label for="name">Full Name</label>
           <input
-            placeholder="Name Surname"
+            placeholder="John Doe"
             class="rounded-full w-full p-2 md:p-4"
             type="text"
             id="name"
             name="name"
           />
 
-          <label for="email">Email</label>
+          <label for="email">Email Address</label>
           <input
-            placeholder="example@buisnessemail.com"
+            placeholder="example@business.com"
             class="rounded-full w-full p-2 md:p-4"
             type="email"
             id="email"
@@ -203,23 +200,23 @@ const meta = {
             type="text"
             id="phone"
             name="phone"
-            placeholder="(123-45-678)"
+            placeholder="+123 42 123 123"
           />
 
           <button
             type="submit"
             class="shadow-none cta-button-lg mx-auto md:w-72 my-4"
-            >Calculate your expenses</button
+            >Calculate Your Expenses</button
           >
         </form>
         <p class="text-xl text-center text-paper">
-          P.S. Say goodbye to unfair prices cyber-sec offer.
+          P.S. Say goodbye to unfair cyber security offers.
         </p>
         <p class="text-xs text-center">
           YOUR INFORMATION IS 100% SAFE. WE NEVER SHARE YOUR INFORMATION WITH
-          ANYONE. BY CLICKING “SUBMIT” I AGREE TO RECEIVE AUTO AND PRE-MADE
-          E-MAILS AT THE E-MAIL PROVIDED. I UNDERSTAND THAT MY CONSENT IS NOT A
-          CONDITION TO PURCHASE ANYTHING.
+          ANYONE. BY CLICKING Calculate Your Expenses I AGREE TO RECEIVE AUTO
+          AND PRE-MADE E-MAILS AT THE E-MAIL PROVIDED. I UNDERSTAND THAT MY
+          CONSENT IS NOT A CONDITION TO PURCHASE ANYTHING.
         </p>
       </div>
     </div>

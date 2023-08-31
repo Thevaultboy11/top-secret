@@ -4,8 +4,7 @@ function TypeAssessment({ onChangePriceVariables, k }) {
   return (
     <div className="">
       <h1 className="block mb-4 text-base my-4">
-        Select what type of security assessment do you want. Black box-Gray
-        box-White box
+        What Type of Security Assessment You Need?
       </h1>
       <ul className="items-center grid grid-cols-1 md:grid-cols-4 w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
         <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
@@ -23,7 +22,7 @@ function TypeAssessment({ onChangePriceVariables, k }) {
               htmlFor="white-box"
               className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
-              White box
+              White Box
             </label>
           </div>
         </li>
@@ -42,7 +41,7 @@ function TypeAssessment({ onChangePriceVariables, k }) {
               htmlFor="gray-box"
               className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
-              Gray box
+              Gray Box
             </label>
           </div>
         </li>
@@ -61,7 +60,7 @@ function TypeAssessment({ onChangePriceVariables, k }) {
               htmlFor="black-box"
               className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
-              Black box
+              Black Box
             </label>
           </div>
         </li>

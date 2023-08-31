@@ -63,7 +63,7 @@ function CalculatorForm() {
       if (i == 0 || m == 0 || p == 0) {
         setModalData({
           isOpen: true,
-          text: "Enter the number of inputs, the number of pages, and third party software for you web application.",
+          text: "Enter the number of inputs, the number of pages and third party software used on your web application",
         });
         return;
       }
@@ -72,7 +72,7 @@ function CalculatorForm() {
       if (i == 0 || m == 0 || p == 0) {
         setModalData({
           isOpen: true,
-          text: "Enter the number of inputs, the number of pages, and third party software for you mobile application.",
+          text: "Enter the number of inputs, the number of pages and third party software for you mobile application",
         });
         return;
       }
@@ -81,7 +81,7 @@ function CalculatorForm() {
       if (r == 0) {
         setModalData({
           isOpen: true,
-          text: "Enter the number of API endpoints.",
+          text: "Enter the number of API endpoints",
         });
         return;
       }
@@ -90,7 +90,7 @@ function CalculatorForm() {
       if (s == 0 || sub == 0) {
         setModalData({
           isOpen: true,
-          text: "Enter the number of devices and subnets.",
+          text: "Enter the number of devices and subnets",
         });
         return;
       }
@@ -145,7 +145,7 @@ function CalculatorForm() {
       <>
         <h2 className="text-base mb-4">
           {" "}
-          Rough estimate of the price for these factors:
+          Price estimate according to your data:
         </h2>
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <li className="bg-white border border-1 border-paper rounded-md p-4 flex justify-center items-center">
@@ -166,13 +166,13 @@ function CalculatorForm() {
         </ul>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
           <div>
-            <h1 className="text-base">The asked price</h1>
+            <h1 className="text-base">Budget</h1>
             <div className="bg-white border border-1 border-paper rounded-md p-4 flex justify-center items-center">
               <p>{PriceToPay}$</p>
             </div>
           </div>
           <div>
-            <h1 className="text-base">Industry standard</h1>
+            <h1 className="text-base">Industry Standard</h1>
             <div className="bg-white border border-1 border-paper rounded-md p-4 flex justify-center items-center">
               <p>{FullPrice}$</p>
             </div>
@@ -182,7 +182,7 @@ function CalculatorForm() {
           {" "}
           <div className="w-full flex flex-col justify-center items-center">
             <p className="text-white font-bold text-lg">
-              Hybrid model{" "}
+              Hybrid Model{" "}
               <span className="text-white font-bold line-through">
                 {" "}
                 {FullPrice}$
@@ -190,11 +190,11 @@ function CalculatorForm() {
             </p>
             <p className="text-white  text-lg">
               {" "}
-              Because we are running Amplify security until halloween offer.{" "}
+              Because we are running the "Amplify Security Until Halloween" offer.{" "}
               <br />
             </p>
             <p className="text-white">
-              The hybrid assment is <b>FREE</b>.
+              Our Security Assessment is <b>FREE</b>.
             </p>
             <a className="ml-4 text-secondary " href="/learn-more">
               Explanation
@@ -257,7 +257,7 @@ function CalculatorForm() {
       )}
 
       <div className="max-w-4xl">
-        <h3 className="mb-4 text-base">Price you are willing to pay.</h3>
+        <h3 className="mb-4 text-base">Your Budget</h3>
         <div className="relative mb-6">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
             <svg
@@ -303,7 +303,7 @@ function CalculatorForm() {
                 htmlFor="horizontal-list-radio-license"
                 className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Web application testing
+                Web Application Testing
               </label>
             </div>
           </li>
@@ -322,7 +322,7 @@ function CalculatorForm() {
                 htmlFor="horizontal-list-radio-id"
                 className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Mobile application testing
+                Mobile Application Testing
               </label>
             </div>
           </li>
@@ -360,7 +360,7 @@ function CalculatorForm() {
                 htmlFor="horizontal-list-radio-passport"
                 className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Network testing
+                Network Testing
               </label>
             </div>
           </li>
@@ -378,8 +378,8 @@ function CalculatorForm() {
                   htmlFor="number_of_pages"
                   className="block my-4 text-base"
                 >
-                  Number of dynamic pages. (Where the content loads based on the
-                  user profile.)
+                  No. of Dynamic Pages (where the content loads based on the
+                  user profile)
                 </label>
                 <input
                   value={p}
@@ -396,8 +396,8 @@ function CalculatorForm() {
                   htmlFor="number_of_input_pages"
                   className="block my-4 text-base"
                 >
-                  Number of input fields. (Every action a user can make to
-                  change a curtain action.)
+                  No. of Input Fields (every action a user can make to
+                  change a curtain action)
                   <a className="ml-4 text-primary" href="/">
                     Explanation
                   </a>
@@ -417,8 +417,8 @@ function CalculatorForm() {
                   htmlFor="number_of_micro_services"
                   className="block my-4 text-base"
                 >
-                  Number of third party software. (Every microservice for
-                  handling logic of the application.)
+                  No. of Third Party Software(every microservice for
+                  handling logic of the application)
                 </label>
                 <input
                   type="number"
@@ -441,7 +441,7 @@ function CalculatorForm() {
             />
             <div className="">
               <label htmlFor="number_routes" className="block my-4 text-base">
-                Number of API endpoints:{" "}
+                No. of API endpoints {" "}
                 <a className="ml-4 text-primary" href="/">
                   Explanation
                 </a>
@@ -461,7 +461,7 @@ function CalculatorForm() {
         {x === 3 && (
           <div className="">
             <div className="">
-              <p className="block my-4 text-base">Type of network testing </p>
+              <p className="block my-4 text-base">Type of Network Testing </p>
               <ul className="items-center grid grid-cols-1 md:grid-cols-4 w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
                   <div className="flex items-center pl-3">
@@ -477,7 +477,7 @@ function CalculatorForm() {
                       htmlFor="internal-network"
                       className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >
-                      Internal network
+                      Internal Network
                     </label>
                   </div>
                 </li>
@@ -495,13 +495,13 @@ function CalculatorForm() {
                       htmlFor="external-network"
                       className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >
-                      External network
+                      External Network
                     </label>
                   </div>
                 </li>
               </ul>
               <label htmlFor="number_subnets" className="block my-4 text-base">
-                Number of subnets: (){" "}
+                No. of Subnets (){" "}
                 <a className="ml-4 text-primary" href="/">
                   Explanation
                 </a>
@@ -517,7 +517,7 @@ function CalculatorForm() {
             </div>
             <div className="">
               <label htmlFor="number_devices" className="block my-4 text-base">
-                Number of devices on the network: (){" "}
+                No. of Devices On The Network (){" "}
                 <a className="ml-4 text-primary" href="/">
                   Explanation
                 </a>
@@ -541,7 +541,7 @@ function CalculatorForm() {
               calculatePrice();
             }}
           >
-            Calculate the cost
+            Calculate The Cost
           </button>
         </div>
       </div>

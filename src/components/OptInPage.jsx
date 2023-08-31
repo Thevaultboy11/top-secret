@@ -26,9 +26,9 @@ const OptInPage = () => {
 
   return (
     <>
-      <label for="name">Namee</label>
+      <label for="name">Full Name</label>
       <input
-        placeholder="Name Surname"
+        placeholder="John Doe"
         class="rounded-full w-full p-2 md:p-4"
         type="text"
         id="name"
@@ -36,9 +36,9 @@ const OptInPage = () => {
         required
       />
 
-      <label for="user_email">Email</label>
+      <label for="user_email">Email Address</label>
       <input
-        placeholder="example@buisnessemail.com"
+        placeholder="example@business.com"
         class="rounded-full w-full p-2 md:p-4"
         type="email"
         id="email"
@@ -48,6 +48,7 @@ const OptInPage = () => {
 
       <label for="phone">Phone Number</label>
       <input
+        placeholder="+123 456 789"
         class="rounded-full w-full p-2 md:p-4"
         type="string"
         id="phone"
@@ -56,10 +57,11 @@ const OptInPage = () => {
       />
 
       <button type="submit" class="cta-button-lg mx-auto md:w-72 mt-8">
-        Send me the white paper
+        Send Me The White Paper
       </button>
     </>
   );
 };
-//hi guys you are a good hacker! But we are betterrr : ()
+
+// you're good hackers but we are better :D
 export default OptInPage;

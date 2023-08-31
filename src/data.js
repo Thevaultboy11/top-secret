@@ -9,11 +9,11 @@ export const headerData = {
     },
     
     {
-      text: 'About',
+      text: 'About Us',
       href: "/about-us",
     },
     {
-      text: 'Case study',
+      text: 'Case Studies',
       href: "/story-type/case-study",
     },
     {
@@ -40,9 +40,9 @@ export const headerData = {
     {
       title: 'Quick links',
       links: [
-        { text: 'About us', href: '/about-us' },
-        { text: 'Case studies', href: '/story-type' },
-        { text: 'Our method', href: '/hybrid-model' },
+        { text: 'About', href: '/about-us' },
+        { text: 'Case Studies', href: '/story-type' },
+        { text: 'Our Method', href: '/hybrid-model' },
         { text: 'Join Mission', href: '/learn-more' },
       ],
     },
