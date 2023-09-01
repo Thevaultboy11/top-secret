@@ -12,7 +12,7 @@ const { posts } = Astro.props;
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl">
   {
     posts.map((post) => (
-      <li class="mb-12 md:mb-20">
+      <li class="mb-12">
         <Item post={post} />
       </li>
     ))
