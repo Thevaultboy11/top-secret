@@ -1,4 +1,4 @@
-import defaultImage from "/images/hero1.png";
+import defaultImage from "./assets/images/hero.jpg";
 
 const CONFIG = {
   origin: "https://www.starshipshield.com",

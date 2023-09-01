@@ -391,7 +391,6 @@ function CalculatorForm() {
                   user profile)
                 </label>
                 <input
-                  value={p}
                   min="1"
                   type="number"
                   onChange={(e) => handlePriceVariables("p", e.target.value)}
@@ -413,7 +412,6 @@ function CalculatorForm() {
                 </label>
                 <input
                   min="1"
-                  value={i}
                   type="number"
                   onChange={(e) => handlePriceVariables("i", e.target.value)}
                   id="number_of_input_pages"
@@ -431,7 +429,6 @@ function CalculatorForm() {
                 </label>
                 <input
                   type="number"
-                  value={m}
                   id="number_of_micro_services"
                   onChange={(e) => handlePriceVariables("m", e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-blue-500 block w-full p-2.5"
@@ -458,7 +455,6 @@ function CalculatorForm() {
               <input
                 type="number"
                 id="number_routes"
-                value={r}
                 onChange={(e) => handlePriceVariables("r", e.target.value)}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-blue-500 block w-full p-2.5"
                 required
@@ -518,7 +514,6 @@ function CalculatorForm() {
               <input
                 onChange={(e) => handlePriceVariables("sub", e.target.value)}
                 type="number"
-                value={sub}
                 id="number_subnets"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  focus:border-blue-500 block w-full p-2.5"
                 required
@@ -532,7 +527,6 @@ function CalculatorForm() {
                 </a>
               </label>
               <input
-                value={s}
                 onChange={(e) => handlePriceVariables("s", e.target.value)}
                 type="number"
                 id="number_devices"
