@@ -312,7 +312,7 @@ function CalculatorForm() {
                 htmlFor="horizontal-list-radio-license"
                 className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Web Application Testing
+                Web Application Assessment
               </label>
             </div>
           </li>
@@ -331,7 +331,7 @@ function CalculatorForm() {
                 htmlFor="horizontal-list-radio-id"
                 className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Mobile Application Testing
+                Mobile Application Assessment
               </label>
             </div>
           </li>
@@ -350,7 +350,7 @@ function CalculatorForm() {
                 htmlFor="horizontal-list-radio-millitary"
                 className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                API testing
+                API Assessment
               </label>
             </div>
           </li>
@@ -369,7 +369,7 @@ function CalculatorForm() {
                 htmlFor="horizontal-list-radio-passport"
                 className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Network Testing
+                Network Assessment
               </label>
             </div>
           </li>
@@ -387,8 +387,7 @@ function CalculatorForm() {
                   htmlFor="number_of_pages"
                   className="block my-4 text-base"
                 >
-                  No. of Dynamic Pages (where the content loads based on the
-                  user profile)
+                  No. of Dynamic Pages (ex. user profile settings)
                 </label>
                 <input
                   min="1"
@@ -404,11 +403,7 @@ function CalculatorForm() {
                   htmlFor="number_of_input_pages"
                   className="block my-4 text-base"
                 >
-                  No. of Input Fields (every action a user can make to change a
-                  curtain action)
-                  <a className="ml-4 text-primary" href="/">
-                    Explanation
-                  </a>
+                  No. of Input Fields (ex. search field)
                 </label>
                 <input
                   min="1"
@@ -424,8 +419,7 @@ function CalculatorForm() {
                   htmlFor="number_of_micro_services"
                   className="block my-4 text-base"
                 >
-                  No. of Third Party Software(every microservice for handling
-                  logic of the application)
+                  No. of Third Party Software (ex. some microservice)
                 </label>
                 <input
                   type="number"
@@ -448,9 +442,6 @@ function CalculatorForm() {
             <div className="">
               <label htmlFor="number_routes" className="block my-4 text-base">
                 No. of API endpoints{" "}
-                <a className="ml-4 text-primary" href="/">
-                  Explanation
-                </a>
               </label>
               <input
                 type="number"
@@ -507,9 +498,6 @@ function CalculatorForm() {
               </ul>
               <label htmlFor="number_subnets" className="block my-4 text-base">
                 No. of Subnets (){" "}
-                <a className="ml-4 text-primary" href="/">
-                  Explanation
-                </a>
               </label>
               <input
                 onChange={(e) => handlePriceVariables("sub", e.target.value)}
@@ -522,9 +510,6 @@ function CalculatorForm() {
             <div className="">
               <label htmlFor="number_devices" className="block my-4 text-base">
                 No. of Devices On The Network (){" "}
-                <a className="ml-4 text-primary" href="/">
-                  Explanation
-                </a>
               </label>
               <input
                 onChange={(e) => handlePriceVariables("s", e.target.value)}
