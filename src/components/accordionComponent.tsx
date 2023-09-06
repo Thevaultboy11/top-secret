@@ -53,9 +53,7 @@ export default function AccordionBasicExample(): JSX.Element {
           {activeElement === "element1" && (
             <div className="!mt-0 !rounded-b-none !shadow-none">
               <div className="px-5 py-4">
-                No, Don’t be like Code Spaces, MyBizHomepage, Nirvanix, they
-                were successful until they went bankrupt because of Data
-                Breaches, <b>Be Better</b> <b>be Prepared</b>
+              Don't follow in the footsteps of companies like Code Spaces, MyBizHomepage, and Nirvanix. They were once successful until they went bankrupt due to data breaches. <br></br>Instead, strive to <b>be better</b> and <b>be prepared</b>.
               </div>
             </div>
           )}
@@ -149,10 +147,7 @@ export default function AccordionBasicExample(): JSX.Element {
         {activeElement === "element3" && (
           <div className="!mt-0 !shadow-none">
             <div className="px-5 py-4">
-              Security is not hard to <b>learn</b>, it is hard to <b>teach</b>.
-              We will provide security assessment, education, and content so
-              your developers can start writing code securely without(any risk
-              for you and your business)
+            Learning security is not difficult; teaching it is the challenge. We offer security assessments, education, and content to empower your developers to write secure code without any risk to you and your business.
             </div>
           </div>
         )}
