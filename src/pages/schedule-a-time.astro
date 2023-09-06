@@ -16,40 +16,40 @@ const meta = {
     <Header {...headerData} showRssFeed showToggleTheme position="right" />
   </Fragment>
 
-  <Hero>
+  <!-- <Hero>
     <Fragment slot="title">
-      What time fits you?
       <span class="text-accent highlight mb-1"></span>
     </Fragment>
-    <Fragment slot="content">
-      <div class="flex w-full justify-center items-center mt-4">
-        <div class="max-w-4xl p-6 bg-paper border rounded-xl shadow">
-          <p class="w-full font-bold text-left text-2xl md:text-4xl">
-            Quick reminder
-          </p>
+    <Fragment slot="content"></Fragment>
+  </Hero> -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12">
+    <h1
+      class="cover-title text-center text-black text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+    >
+      What time fits you?
+    </h1>
+  </div>
+  <div>
+    <div class="flex w-full justify-center items-center mt-4 p-4">
+      <div class="max-w-4xl my-8 p-6 bg-paper border rounded-xl shadow">
+        <p class="w-full font-bold text-left text-2xl md:text-4xl">
+          Quick reminder
+        </p>
 
-          <ul class="mt-4 text-left">
-            <li class="mb-2 md:mb-4 text-lg md:text-xl">
-              ✅ <span class="ml-2 md:ml-4"
-                >We are not offering reschedules.</span
-              >
-            </li>
-            <li class="mb-2 md:mb-4 text-lg md:text-xl">
-              ✅ <span class="ml-2 md:ml-4"
-                >After the call you can try implementing the new model on your
-                own.</span
-              >
-            </li>
-            <li class="mb-2 md:mb-4 text-lg md:text-xl">
-              ✅ <span class="ml-2 md:ml-4"
-                >If... you want to partner up and to it with us. Our experienced
-                team can help you free of charge.
-              </span>
-            </li>
-          </ul>
-        </div>
+        <ul class="mt-4 text-left">
+          <li class="mb-2 md:mb-4 text-lg md:text-xl">
+            ✅ <span class="ml-2 md:ml-4">We are not offering reschedules.</span
+            >
+          </li>
+          <li class="mb-2 md:mb-4 text-lg md:text-xl">
+            ✅ <span class="ml-2 md:ml-4"
+              >On the 15-minute call we will present a custom tailored security
+              sollution.
+            </span>
+          </li>
+        </ul>
       </div>
-    </Fragment>
-  </Hero>
-  <div class="-mt-40"><Calendly /></div>
+    </div>
+  </div>
+  <div class=""><Calendly /></div>
 </Layout>

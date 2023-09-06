@@ -1,0 +1,203 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+import { Picture } from "@astrojs/image/components";
+import Header from "~/components/widgets/Header.astro";
+import { headerData } from "~/data";
+const meta = {
+  title: "Learn more",
+  description: "In this short video we will explain you our hybrid model.",
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <Fragment slot="header">
+    <Header {...headerData} showRssFeed showToggleTheme position="right" />
+  </Fragment>
+  <section
+    class="relative h-300 md:h-200 md:-mt-20 xl:-mt-20 bg-cover bg-center mb-16"
+    style="background-image: url('/images/cta/cta-cover2.png');  box-shadow: 0px 12px 10px 0px #6929c2;  "
+  >
+    <div
+      class="absolute w-full h-full inset-0 opacity-60"
+      style="background-image: linear-gradient(
+    0deg,
+    hsl(265deg 65% 46%) 0%,
+    hsl(265deg 65% 46%) 13%,
+    hsl(265deg 65% 46%) 25%,
+    hsl(260deg 100% 29%) 37%,
+    hsl(0deg 0% 0%) 50%,
+    hsl(339deg 0% 0%) 63%,
+    hsl(0deg 0% 0%) 75%,
+    hsl(339deg 0% 0%) 87%,
+    hsl(0deg 0% 0%) 100%
+  );
+  
+  "
+    >
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-4 md:py-8">
+        <div class="text-center max-w-screen-lg mx-auto">
+          <p class="info-title text-xs md:text-base w-full md:max-w-lg mx-auto">
+            <span class="text-white select-none"
+              >Last Untill the end of the cyber-month</span
+            >
+          </p>
+          <h1
+            class="cover-title text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+          >
+            Scale to riches with cyber-security
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="max-w-6xl mx-auto p-4">
+    <div class="grid md:grid-cols-3 h-1/2 gap-8">
+      <div class="w-full h-full p-8 rounded-xl primary-shadow bg-paper">
+        <h1 class="text-xl leading-6 mb-4 text-primary">
+          Focus on Customer acquisition, CLV?
+        </h1>
+        <p class="text-lg w-full md:w-full">
+          This is the basic formula for “Get rich only once.” but it could lead
+          to “Get bankrupt only once” if you undermine the security side of
+          things.
+        </p>
+      </div>
+      <div class="w-full h-full p-8 rounded-xl primary-shadow bg-paper">
+        <h1 class="text-xl leading-6 mb-4 text-primary">
+          The problem will only get bigger
+        </h1>
+        <p class="text-lg w-full md:w-full">
+          Equifax a 25 Billion dollar company, lost 5 billion dollars of its
+          stock price because of a data breach. Imagine where would they be now
+          if they took care of their security.
+        </p>
+      </div>
+      <div class="w-full h-full p-8 rounded-xl primary-shadow bg-paper">
+        <h1 class="text-xl leading-6 mb-8 text-primary">
+          How to scale with security?
+        </h1>
+        <p class="text-lg w-full md:w-full">
+          Do you think only one security assessment is enough, it is only a
+          quarter of the Job done. You need to continuously check for your
+          security holes.
+        </p>
+      </div>
+    </div>
+    <div
+      id="scrollToOptButton"
+      class="cursor-pointer mx-auto mt-12 cta-button-sm w-52 flex items-center justify-center gap-x-4"
+    >
+      <p>The formula</p>
+      <span
+        class={`rotate-0 fill-[#212529]  dark:fill-white
+      } ml-auto h-5 w-5 shrink-0 fill-[#336dec] transition-transform duration-200 ease-in-out motion-reduce:transition-none dark:fill-blue-300`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  <div class="max-w-xl mx-auto lg:max-w-2xl my-24">
+    <div
+      class="mb-10 md:mx-auto flex text-center gap-y-2 items-center justify-center flex-col md:mb-12 max-w-4xl"
+    >
+      <p class="info-title text-xs md:text-base">
+        Last Untill the end of the cyber-month
+      </p>
+      <h2 class="sub-title" id="opt-page">Riches with securly scaling</h2>
+    </div>
+    <div class="max-w-4xl mx-auto p-8">
+      <ul style="list-style-type: disc;" class="w-full">
+        <li class="text-xl mb-4 text-muted">
+          Mobile/web app security assessment of your codebase. <span
+            class="text-primary line-through stroke-current"
+            >($10 000 + per 100 000 lines of code)</span
+          >
+        </li>
+        <li class="text-xl mb-4 text-muted">
+          Web / Mobile penetration test for every project <span
+            class="text-primary line-through stroke-current"
+            >(30,000$ per penetration test.)</span
+          >
+        </li>
+        <li class="text-xl mb-4 text-muted">
+          External network penetration test <span
+            class="text-primary line-through stroke-current"
+            >(15,000$ per hosted machine)</span
+          >
+        </li>
+        <li class="text-xl mb-4 text-muted">
+          Internal network penetration test <span
+            class="text-primary line-through stroke-current">(5,000$)</span
+          >
+        </li>
+        <li class="text-xl mb-4 text-muted">
+          Social engineering test for all employees + Education after the test.
+          <span class="text-primary line-through stroke-current"
+            >(10,000$).</span
+          >
+        </li>
+        <li class="text-xl mb-4 text-muted">
+          Cloud Security Audit (only for Google Cloud) <span
+            class="text-primary line-through stroke-current">(5,000$)</span
+          >
+        </li>
+        <li class="text-xl mb-4 text-muted">
+          Daily progress tracking + Custom-tailored content for vulnerability
+          remedy + 24/7 Ready to answer your questions <span
+            class="text-primary stroke-current"
+            >(Saves 10h of developer’s time weekly)
+          </span>
+        </li>
+        <li class="text-xl mb-4 text-muted">
+          Review pipeline and infrastructure + Introduction to DevSecOps <span
+            class="text-primary stroke-current">(500$ every week)</span
+          >
+        </li>
+      </ul>
+    </div>
+    <Picture
+      src={"/images/cta/icon-cta1.png"}
+      class="mx-auto md:rotate-6 col-span-4 rounded-xl my-12"
+      width={400}
+      height={400}
+      widths={[400, 768]}
+      sizes="100vw, 432px"
+      aspectRatio="300:300"
+      alt="sa"
+    />
+    <div class="flex flex-col gap-y-4 items-center p-8 text-center">
+      <p class="text-xl">At this time we can only handle 2 partners/month.</p>
+      <a class="cta-button-sm md:w-80" href="/book-a-meeting"
+        >Reserve your spot</a
+      >
+    </div>
+  </div>
+</Layout>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollToOptButton = document.getElementById("scrollToOptButton");
+    const OptSection = document.getElementById("opt-page");
+    scrollToOptButton.addEventListener("click", function () {
+      // Scroll to the Opt section using smooth behavior
+      OptSection.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+</script>
