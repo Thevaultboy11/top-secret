@@ -63,6 +63,11 @@ function CalculatorForm() {
   }, [submitState]);
   const calculatePrice = () => {
     let result;
+    let help;
+    help = i - m;
+    if (i == m) {
+      help = 1;
+    }
     if (x === 0) {
       if (i == 0 || m == 0 || p == 0) {
         setModalData({
@@ -71,7 +76,7 @@ function CalculatorForm() {
         });
         return;
       }
-      result = ((((i - m) * 30 + 60) * k) / 60) * 100;
+      result = (((help * 30 + 60) * k) / 60) * 100;
     } else if (x == 1) {
       if (i == 0 || m == 0 || p == 0) {
         setModalData({
@@ -80,6 +85,7 @@ function CalculatorForm() {
         });
         return;
       }
+
       result = ((((i - m) * 30 + 60) * k) / 60) * 100;
     } else if (x == 2) {
       if (r == 0) {
@@ -129,7 +135,7 @@ function CalculatorForm() {
       </div>
     );
   }
-  if (submitState == 3) {
+  if (submitState == 3 || true) {
     const type_scope = [
       "Web Application assesment",
       "Mobile Application assesment",
@@ -148,7 +154,6 @@ function CalculatorForm() {
     return (
       <>
         <h2 className="text-base mb-4">
-          {" "}
           Price estimate according to your data:
         </h2>
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -157,18 +162,19 @@ function CalculatorForm() {
           </li>
           <li className="bg-white border border-1 border-paper rounded-md p-4 flex justify-center items-center">
             <p>
-              {" "}
-              The {x !== 3 ? type_assessment[k - 1] : type_network[n]} approach.
+              The{" "}
+              {x !== 3 ? type_assessment[Math.round(k) - 1] : type_network[n]}{" "}
+              approach.
             </p>
           </li>
           <li className="bg-white border border-1 border-paper rounded-md p-4 flex justify-center items-center">
             <p>
-              {" "}
-              With the number of {type_multiplyer[k]} {type_multiplyer_text[k]}
+              With the number of {type_multiplyer[Math.round(k) - 1]}{" "}
+              {type_multiplyer_text[Math.round(k) - 1]}
             </p>
           </li>
         </ul>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-8 mt-4">
           <div>
             <h1 className="text-base">Budget</h1>
             <div className="bg-white border border-1 border-paper rounded-md p-4 flex justify-center items-center">
@@ -184,29 +190,34 @@ function CalculatorForm() {
         </div>
         <div className="bg-primary rounded-md w-full p-4 mt-8">
           {" "}
-          <div className="w-full flex flex-col justify-center items-center">
-            <p className="text-white font-bold text-lg">
-              Hybrid Model{" "}
-              <span className="text-white font-bold line-through">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+            <div className="flex  flex-col justify-center items-center">
+              <div className="text-white font-bold">Industry value:</div>
+              <div className="text-white font-bold line-through">
                 {" "}
                 {FullPrice}$
-              </span>{" "}
-            </p>
-            <p className="text-white  text-lg">
-              {" "}
-              Because we are running the "Amplify Security Until Halloween"
-              offer. <br />
-            </p>
-            <p className="text-white">
-              Our Security Assessment is <b>FREE</b>.
-            </p>
-            <a className="ml-4 text-secondary " href="/learn-more">
+              </div>
+            </div>
+            <div className="flex  flex-col justify-center items-center">
+              <div className="text-white font-bold">Our package:</div>
+              <div className="text-white font-bold line-through"> 60 000$</div>
+            </div>
+          </div>
+          <p className="text-white  text-center   text-lg">
+            Because we are running
+          </p>{" "}
+          <p className="text-white my-4  text-center  text-lg italic font-bold">
+            "Build The Cyber Castle Until The End Of Cyber-month"{" "}
+          </p>
+          <p className="text-white text-center">
+            Our Hybrid Assessment is <b>FREE</b>.
+          </p>
+          <div className="flex justify-center items-center">
+            <a className="my-4 cta-button-secondary-sm" href="/learn-more">
               Explanation
             </a>
           </div>
         </div>
-
-        <p className="text-xl my-4"></p>
       </>
     );
   }
@@ -441,7 +452,7 @@ function CalculatorForm() {
             />
             <div className="">
               <label htmlFor="number_routes" className="block my-4 text-base">
-                No. of API endpoints{" "}
+                No. of API endpoints
               </label>
               <input
                 type="number"
@@ -497,7 +508,7 @@ function CalculatorForm() {
                 </li>
               </ul>
               <label htmlFor="number_subnets" className="block my-4 text-base">
-                No. of Subnets (){" "}
+                No. of Subnets ()
               </label>
               <input
                 onChange={(e) => handlePriceVariables("sub", e.target.value)}
@@ -509,7 +520,7 @@ function CalculatorForm() {
             </div>
             <div className="">
               <label htmlFor="number_devices" className="block my-4 text-base">
-                No. of Devices On The Network (){" "}
+                No. of Devices On The Network ()
               </label>
               <input
                 onChange={(e) => handlePriceVariables("s", e.target.value)}
@@ -522,7 +533,6 @@ function CalculatorForm() {
           </div>
         )}
         <div className="w-full flex justify-center">
-          {" "}
           <button
             className="cta-button-lg  md:w-72 mt-12"
             onClick={() => {

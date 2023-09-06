@@ -12,9 +12,9 @@ function TypeAssessment({ onChangePriceVariables, k }) {
             <input
               id="white-box"
               type="radio"
-              value={0}
-              checked={k === 0}
-              onChange={() => onChangePriceVariables("k", 0)}
+              value={2}
+              checked={k === 2}
+              onChange={() => onChangePriceVariables("k", 2)}
               name="white-box"
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  "
             />
@@ -31,9 +31,9 @@ function TypeAssessment({ onChangePriceVariables, k }) {
             <input
               id="gray-box"
               type="radio"
-              value={1}
-              checked={k === 1}
-              onChange={() => onChangePriceVariables("k", 1)}
+              value={1.5}
+              checked={k === 1.5}
+              onChange={() => onChangePriceVariables("k", 1.5)}
               name="gray-box"
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  "
             />
@@ -50,9 +50,9 @@ function TypeAssessment({ onChangePriceVariables, k }) {
             <input
               id="black-box"
               type="radio"
-              value={2}
-              checked={k === 2}
-              onChange={() => onChangePriceVariables("k", 2)}
+              value={1}
+              checked={k === 1}
+              onChange={() => onChangePriceVariables("k", 1)}
               name="black-box"
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  "
             />
