@@ -154,11 +154,10 @@ const meta = {
               id="modal-content"
               class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
             >
-              Our calculator shows you the average prices in the industry.
+              Our calculator shows you the average prices on the market, for the
+              precise price please contact our sales.
               <br />
               <br />
-              We can help you make better decisions and see how the price stands
-              in the industry standard.
             </p>
           </div>
           <!-- Modal footer -->
@@ -171,7 +170,12 @@ const meta = {
               data-modal-hide="staticModal"
               type="button"
               class="text-white bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >Calculator</a
+              >Calculate</a
+            >
+            <a
+              id="sales_button"
+              class="text-white bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              href="mailto:contact@starshipshield.com">Sales</a
             >
           </div>
         </div>
@@ -262,6 +266,8 @@ const meta = {
   const form = document.getElementById("contactForm");
   const modal = document.getElementById("modal");
   const close_modal = document.getElementById("close_modal");
+  const sales_button = document.getElementById("sales_button");
+
   const modal_backdrop = document.getElementById("modal-backdrop");
   const modal_content = document.getElementById("modal-content");
 
@@ -270,7 +276,22 @@ const meta = {
     modal_backdrop.classList.add("hidden");
     document.body.style.overflow = "";
   });
+  function move_progress_bar() {
+    let width = 0;
 
+    var elem = document.getElementById("progress_bar");
+    var id = setInterval(frame, 20);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        width = 0;
+        elem.style.width = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const nameInput = form.querySelector("#name").value;
@@ -284,7 +305,7 @@ const meta = {
       email: String(emailInput),
       phoneNumber: String(phoneInput),
     };
-
+    move_progress_bar();
     try {
       const response = await fetch(`${apiUrl}/create-member`, {
         method: "POST",
@@ -300,6 +321,7 @@ const meta = {
         document.body.style.overflow = "hidden";
       } else {
         close_modal?.classList.toggle("hidden");
+        sales_button?.classList.toggle("hidden");
         modal.classList.toggle("hidden");
         modal_backdrop.classList.remove("hidden");
         document.body.style.overflow = "hidden";

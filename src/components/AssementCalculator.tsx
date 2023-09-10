@@ -135,7 +135,7 @@ function CalculatorForm() {
       </div>
     );
   }
-  if (submitState == 3 || true) {
+  if (submitState == 3) {
     const type_scope = [
       "Web Application assesment",
       "Mobile Application assesment",

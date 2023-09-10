@@ -29,8 +29,10 @@ function CallPage() {
       phoneNumber: String(number),
       businessDescription: String(business_type),
       pentestType: String(security_assessment),
-      applicationType: "0", // Replace with the actual value
+      applicationType: "none",
+      packageType: String(package_type),
     };
+
     fetch(`${apiUrl}/create-business`, {
       method: "POST",
       headers: {

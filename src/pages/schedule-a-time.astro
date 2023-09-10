@@ -53,3 +53,23 @@ const meta = {
   </div>
   <div class=""><Calendly /></div>
 </Layout>
+<script>
+  function move_progress_bar() {
+    let width = 0;
+
+    var elem = document.getElementById("progress_bar");
+    var id = setInterval(frame, 20);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        width = 0;
+        elem.style.width = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+  move_progress_bar();
+  // Call the function when the document loads
+</script>
