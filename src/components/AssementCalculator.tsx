@@ -182,7 +182,7 @@ function CalculatorForm() {
             </div>
           </div>
           <div>
-            <h1 className="text-base">Industry Standard</h1>
+            <h1 className="text-base">Price</h1>
             <div className="bg-white border border-1 border-paper rounded-md p-4 flex justify-center items-center">
               <p>{FullPrice}$</p>
             </div>
@@ -190,19 +190,6 @@ function CalculatorForm() {
         </div>
         <div className="bg-primary rounded-md w-full p-4 mt-8">
           {" "}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div className="flex  flex-col justify-center items-center">
-              <div className="text-white font-bold">Industry value:</div>
-              <div className="text-white font-bold line-through">
-                {" "}
-                {FullPrice}$
-              </div>
-            </div>
-            <div className="flex  flex-col justify-center items-center">
-              <div className="text-white font-bold">Our package:</div>
-              <div className="text-white font-bold line-through"> 60 000$</div>
-            </div>
-          </div>
           <p className="text-white  text-center   text-lg">
             Because we are running
           </p>{" "}
@@ -398,7 +385,7 @@ function CalculatorForm() {
                   htmlFor="number_of_pages"
                   className="block my-4 text-base"
                 >
-                  No. of Dynamic Pages (ex. user profile settings)
+                  No. of Dynamic Pages (E.g. Profile Settings Page)
                 </label>
                 <input
                   min="1"
@@ -414,7 +401,7 @@ function CalculatorForm() {
                   htmlFor="number_of_input_pages"
                   className="block my-4 text-base"
                 >
-                  No. of Input Fields (ex. search field)
+                  No. of Input Fields (E.g. Search, Date, Filter)
                 </label>
                 <input
                   min="1"
@@ -430,7 +417,7 @@ function CalculatorForm() {
                   htmlFor="number_of_micro_services"
                   className="block my-4 text-base"
                 >
-                  No. of Third Party Software (ex. some microservice)
+                  No. of Third Party Software (E.g. Stripe, Chat Bot)
                 </label>
                 <input
                   type="number"
@@ -468,7 +455,7 @@ function CalculatorForm() {
         {x === 3 && (
           <div className="">
             <div className="">
-              <p className="block my-4 text-base">Type of Network Testing </p>
+              <p className="block my-4 text-base">Network Assessment Type </p>
               <ul className="items-center grid grid-cols-1 md:grid-cols-4 w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
                   <div className="flex items-center pl-3">
@@ -508,7 +495,7 @@ function CalculatorForm() {
                 </li>
               </ul>
               <label htmlFor="number_subnets" className="block my-4 text-base">
-                No. of Subnets ()
+                No. of Subnets
               </label>
               <input
                 onChange={(e) => handlePriceVariables("sub", e.target.value)}
@@ -520,7 +507,7 @@ function CalculatorForm() {
             </div>
             <div className="">
               <label htmlFor="number_devices" className="block my-4 text-base">
-                No. of Devices On The Network ()
+                No. of Devices On The Network
               </label>
               <input
                 onChange={(e) => handlePriceVariables("s", e.target.value)}

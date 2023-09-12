@@ -25,7 +25,7 @@ export default function AccordionBasicExample(): JSX.Element {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Will this be a waste of time?
+              Is this going to be a waste of time?
               <span
                 className={`${
                   activeElement === "element1"
@@ -147,7 +147,7 @@ export default function AccordionBasicExample(): JSX.Element {
         {activeElement === "element3" && (
           <div className="!mt-0 !shadow-none">
             <div className="px-5 py-4">
-            Learning security is not difficult; teaching it is the challenge. We offer security assessments, education, and content to empower your developers to write secure code without any risk to you and your business.
+            Learning security is not difficult. Teaching it is the challenge. We offer security assessments, education, and content to empower your developers to write secure code without any risk to you and your business.
             </div>
           </div>
         )}
