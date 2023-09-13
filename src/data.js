@@ -1,56 +1,62 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
-
+import { getPermalink, getBlogPermalink, getAsset } from "./utils/permalinks";
 
 export const headerData = {
   links: [
     {
-      text: 'Resources',
+      text: "Resources",
       href: "/resources",
     },
-    
+
     {
-      text: 'About Us',
+      text: "About Us",
       href: "/about-us",
     },
     {
-      text: 'Case Studies',
+      text: "Case Studies",
       href: "/story-type/case-study",
     },
     {
-      text: 'Blog',
+      text: "Blog",
       href: getBlogPermalink(),
     },
     {
-      text: 'Our Method',
+      text: "Our Method",
       href: "/learn-more",
     },
-    
   ],
   actions: [
     {
-      text: 'Experience Hybrid',
+      text: "Experience Hybrid",
       href: "/learn-more",
-      type: "primary"
+      type: "primary",
     },
-  ]
- };
+  ],
+};
 
- export const footerData = {
+export const footerData = {
   links: [
     {
-      title: 'Quick links',
+      title: "Quick links",
       links: [
-        { text: 'About', href: '/about-us' },
-        { text: 'Case Studies', href: '/story-type' },
-        { text: 'Our Method', href: '/hybrid-model' },
-        { text: 'Join Mission', href: '/learn-more' },
+        { text: "About", href: "/about-us" },
+        { text: "Case Studies", href: "/story-type/case-study" },
+        { text: "Blog", href: "/blog" },
+        { text: "Join Mission", href: "/learn-more" },
       ],
     },
-    ],
- 
+  ],
+
   socialLinks: [
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/starship-shield/' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/starshipshield/' },
+    {
+      ariaLabel: "LinkedIn",
+      icon: "tabler:brand-linkedin",
+      href: "https://www.linkedin.com/company/starship-shield/",
+    },
+    {
+      ariaLabel: "Instagram",
+      icon: "tabler:brand-instagram",
+      href: "https://www.instagram.com/starshipshield/",
+    },
   ],
   footNote: `
   <div class='flex justify-center items-center gap-x-4'>
@@ -60,13 +66,12 @@ export const headerData = {
    `,
 };
 
-
 // export const footerData = {
 //   socialLinks: [
 //     { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
 //     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
 //   ],
-//   footNote: `    
+//   footNote: `
 //     Starship Shield · All rights reserved.
 //   `,
 // };
