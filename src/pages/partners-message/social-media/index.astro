@@ -1,0 +1,96 @@
+---
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+
+import { Picture } from "@astrojs/image/components";
+import Cta from "../../../components/Cta.astro";
+
+const meta = {
+  title: "About us",
+  description: "The 3 core tenets about building digital castles",
+  dontUseTitleTemplate: true,
+};
+---
+
+<script>
+  import DOMpurify from "dompurify";
+  let params = new URLSearchParams(window.location.search);
+
+  let name = params.get("name") || ""; // "test"
+  if (
+    name == "�" ||
+    name == "—" ||
+    name == "---" ||
+    name == "%2D" ||
+    name == "%2D%2D%2D"
+  ) {
+    name = "";
+  }
+  let company_name = params.get("company") || "your company";
+  const clientNameElement = document.getElementById("client-name");
+  const clientCompanyElement = document.getElementById("client-company");
+
+  if (clientCompanyElement) {
+    clientCompanyElement.innerHTML = DOMpurify.sanitize(company_name);
+  }
+
+  if (clientNameElement) {
+    clientNameElement.innerHTML = DOMpurify.sanitize(name);
+  }
+  // alert(, DOMpurify.sanitize(company_name)]);
+</script>
+
+<Layout {meta}>
+  <div class="">
+    <div
+      class="mx-auto w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 p-4 gap-4 mb-16"
+    >
+      <div
+        class="px-8 overflow-clip flex justify-center items-center rounded-2xl"
+      >
+        <iframe
+          src="https://www.youtube.com/embed/0bAOYLaRO-s?si=moxB8xKhRUzoChT8"
+          width="auto"
+          height="100%"
+          title="YouTube video player"
+          frameborder="0"
+          class="w-full mx-auto block rounded-xl my-auto"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="bg-paper max-w rounded-2xl h-full p-8 py-24">
+        <div class="flex flex-col items-center gap-y-2 text-center">
+          <p
+            class="text-3xl leading-10 md:text-4xl font-semibold uppercase italic"
+          >
+            Startup?
+          </p>
+          <h1 class="text-4xl md:text-6xl font-bold">
+            👋 Hi <label id="client-name"></label>
+          </h1>
+          <p class="text-xl text-left mt-8">
+            Starting a social media company can be challenging, trust me (we've
+            failed to launch one). No need for your <span
+              class="font-bold"
+              id="client-company"></span> to make the same mistake.
+          </p>
+          <p class="text-xl text-left mt-8">
+            If you believe we can provide you with $15k worth of value for free,
+            click on the button bellow. 👇
+          </p>
+          <h1 class="text-xl text-left mt-8 font-bold">Objections?</h1>
+          <p class="text-base text-left mt-4 select-none">
+            <span class="font-bold mr-4">1.</span> Too good to be true? We understand
+            that startups with limited funding can't afford high fees. That is why
+            we aim to build trust with our clients.
+          </p>
+          <p class="text-base text-left mt-4 select-none">
+            <span class="font-bold mr-4">2.</span> There won't be any hidden charges,
+            we're doing this to establish long-term connections with our clients.
+          </p>
+        </div>
+      </div>
+    </div>
+    <Cta />
+  </div>
+</Layout>
