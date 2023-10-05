@@ -32,39 +32,92 @@ export const headerData = {
     },
   ],
 };
-
 export const footerData = {
   links: [
     {
-      title: "Quick links",
+      title: "Product",
       links: [
-        { text: "About", href: "/about-us" },
-        { text: "Case Studies", href: "/story-type/case-study" },
-        { text: "Blog", href: "/blog" },
-        { text: "Join Mission", href: "/learn-more" },
+        {
+          text: "Time Travel To A Secure Startup",
+          href: "/cyber-castle/startup-security",
+        },
+        { text: "Scale With security", href: "/cyber-castle/scaling-security" },
+      ],
+    },
+    {
+      title: "Customer feedback",
+      links: [
+        { text: "Case studies", href: "/story-type/case-study" },
+        { text: "Client wins", href: "/story-type/client-wins" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { text: "Starship Shield Blog", href: "/blog" },
+        {
+          text: "How to make a good Security Assessment Scope",
+          href: "/resources/scope-paper",
+        },
+        {
+          text: "Security Assessment Price Calculator",
+          href: "/resources/assesment-calculator",
+        },
       ],
     },
   ],
 
   socialLinks: [
+    { ariaLabel: "X", icon: "tabler:brand-x", href: "#" },
+    { ariaLabel: "Instagram", icon: "tabler:brand-instagram", href: "#" },
+    { ariaLabel: "Facebook", icon: "tabler:brand-facebook", href: "#" },
+    { ariaLabel: "RSS", icon: "tabler:rss", href: getAsset("/rss.xml") },
     {
-      ariaLabel: "LinkedIn",
-      icon: "tabler:brand-linkedin",
-      href: "https://www.linkedin.com/company/starship-shield/",
-    },
-    {
-      ariaLabel: "Instagram",
-      icon: "tabler:brand-instagram",
-      href: "https://www.instagram.com/starshipshield/",
+      ariaLabel: "Github",
+      icon: "tabler:brand-github",
+      href: "https://github.com/onwidget/astrowind",
     },
   ],
   footNote: `
   <div class='flex justify-center items-center gap-x-4'>
-    <span class="w-20 h-8 md:w-20 md:h-8 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(/images/blacklogo.png)]"></span>
-    <p>Made by <a class="text-blue-600 hover:underline  " href="https://starshipshield.com/"> Starship Shield</a> · All rights reserved.</p>
-  </div>
-   `,
+       <span class="w-20 h-8 md:w-20 md:h-8 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(/images/blacklogo.png)]"></span>
+       <p>Made by <a class="text-blue-600 hover:underline  " href="https://starshipshield.com/"> Starship Shield</a> · All rights reserved.</p>
+     </div> 
+  `,
 };
+
+// export const footerData = {
+//   links: [
+//     {
+//       title: "Quick links",
+//       links: [
+//         { text: "About", href: "/about-us" },
+//         { text: "Case Studies", href: "/story-type/case-study" },
+//         { text: "Blog", href: "/blog" },
+//         { text: "Join Mission", href: "/learn-more" },
+//       ],
+//     },
+//   ],
+
+//   socialLinks: [
+//     {
+//       ariaLabel: "LinkedIn",
+//       icon: "tabler:brand-linkedin",
+//       href: "https://www.linkedin.com/company/starship-shield/",
+//     },
+//     {
+//       ariaLabel: "Instagram",
+//       icon: "tabler:brand-instagram",
+//       href: "https://www.instagram.com/starshipshield/",
+//     },
+//   ],
+//   footNote: `
+//   <div class='flex justify-center items-center gap-x-4'>
+//     <span class="w-20 h-8 md:w-20 md:h-8 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(/images/blacklogo.png)]"></span>
+//     <p>Made by <a class="text-blue-600 hover:underline  " href="https://starshipshield.com/"> Starship Shield</a> · All rights reserved.</p>
+//   </div>
+//    `,
+// };
 
 // export const footerData = {
 //   socialLinks: [
