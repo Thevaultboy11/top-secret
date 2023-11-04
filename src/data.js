@@ -35,16 +35,6 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: "Product",
-      links: [
-        {
-          text: "Time Travel To A Secure Startup",
-          href: "/cyber-castle/startup-security",
-        },
-        { text: "Scale With security", href: "/cyber-castle/scaling-security" },
-      ],
-    },
-    {
       title: "Customer feedback",
       links: [
         { text: "Case studies", href: "/story-type/case-study" },

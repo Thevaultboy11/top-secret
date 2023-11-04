@@ -23,138 +23,51 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <section class="relative h-300 md:h-200 md:-mt-20 xl:-mt-20 mb-16">
-    <img
-      id="gif"
-      loading="lazy"
-      src="/images/about/card-aboutt3.gif"
-      alt="Conference Image"
-      class="w-full hidden h-full absolute object-cover object-center"
-      style="box-shadow: 0px 12px 10px 0px #6929c2;"
-    />
-    <div
-      class="absolute w-full h-full inset-0 opacity-40"
-      style="background-image: linear-gradient(0deg, hsl(265deg 65% 46%) 0%, hsl(265deg 65% 46%) 13%, hsl(265deg 65% 46%) 25%, hsl(260deg 100% 29%) 37%, hsl(0deg 0% 0%) 50%, hsl(339deg 0% 0%) 63%, hsl(0deg 0% 0%) 75%, hsl(339deg 0% 0%) 87%, hsl(0deg 0% 0%) 100%);"
-    >
-    </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12">
-      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-      <div class="py-4 md:py-8">
-        <div class="text-center max-w-screen-lg mx-auto">
-          <p class="info-title w-full md:max-w-lg mx-auto">
-            <span class="text-white select-none"
-              >Lasts until end of cyber-security month!</span
-            >
-          </p>
-          <h1
-            class="cover-title text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
-          >
-            Create a Cyber castle
-          </h1>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div
-    class="mt-16 md:mt-32 mx-auto relative gap-8 grid grid-cols-1 md:grid-cols-2 p-4 max-w-6xl"
+    class="flex py-40 justify-center flex-col items-center w-full mx-auto max-w-4xl"
   >
-    <div class="bg-paper rounded-xl p-4 md:p-8">
-      <h1 class="text-2xl md:text-4xl mb-4">Common Myths</h1>
-      <Accordion client:only />
-    </div>
-    <div class="">
-      <Picture
-        class="mx-auto rounded-xl bg-gray-500"
-        width={600}
-        height={500}
-        widths={[400, 768]}
-        sizes="100vw, 432px"
-        aspectRatio="1600:900"
-        alt="sa"
-        src={"/images/cta/card-cta1.png"}
-      />
-    </div>
-  </div>
-  <div class="w-full max-w-6xl mx-auto">
-    <div class="max-w-xl mx-auto lg:max-w-2xl my-12">
-      <div
-        class="mb-10 md:mx-auto flex text-center gap-y-4 items-center justify-center flex-col md:mb-12 max-w-3xl"
-      >
-        <h2 class="sub-title">For executives that play the long game.</h2>
-        <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted"></p>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 my-8 gap-8 md:gap-4 mb-16 max-w-3xl mx-auto p-4"
+    <h1
+      class="text-back text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
     >
-      <div
-        class="bg-paper px-12 py-8 flex flex-col items-center gap-y-1 h-full mb-4 rounded-xl"
-      >
-        <h1 class="text-secondary font-bold text-xl text-center">
-          Time Travel To A Secure Startup
-        </h1>
-        <h1 class="text-ibm-black text-lg text-center">
-          For Newly Founded Startups
-        </h1>
-        <h1 class="text-center pt-6 text-secondary">
-          <span class="text-4xl text-bold stroke-current">$25000</span>
-          <span class="text-xl text-bold">/ Worth of</span>
-        </h1>
-        <h1 class="text-center text-secondary text-2xl font-bold">Value</h1>
-        <h1 class="text-center mt-4">
-          <span class="text-ibm-black"
-            ><span class="font-bold">FACT: 66%</span> of SMB's go down after experiencing
-            a data breach and <span class="font-bold">43%</span> lack any type of
-            cybersecurity defense plan</span
-          >
-        </h1>
-        <a
-          href="/cyber-castle/startup-security"
-          class="cta-button-secondary-sm md:w-40 mt-8">Claim Now</a
-        >
-      </div>
-
-      <div
-        class="bg-paper px-12 py-8 flex flex-col items-center gap-y-1 h-full mb-4 rounded-xl"
-      >
-        <h1 class="text-primary font-bold text-xl text-center">
-          Scale to Riches
-        </h1>
-        <h1 class="text-primary font-bold text-xl text-center">With Us</h1>
-        <h1 class="text-ibm-black text-lg text-center">
-          For Scaling Large Businesses
-        </h1>
-        <h1 class="text-center pt-6 text-primary">
-          <span class="text-4xl text-bold stroke-current">$34000</span>
-          <span class="text-xl text-bold">/ Worth of</span>
-        </h1>
-        <h1 class="text-center text-primary text-2xl font-bold">Value</h1>
-        <h1 class="text-center mt-4">
-          <span class="text-ibm-black"
-            ><span class="font-bold">FACT: 60%</span> oof large businesses experienced
-            a data breach in the last year and <span class="font-bold">70%</span
-            > of do not have a cybersecurity plan in place</span
-          >
-        </h1>
-        <a
-          href="/cyber-castle/scaling-security"
-          class="cta-button-sm md:w-40 mt-7">Claim Now</a
-        >
-      </div>
+      New Product's Soon.
+    </h1>
+    <p>Something started forming, and will take shape soon.</p>
+    <div class="flex gap-x-4 my-8">
+      <p class="border border-black rounded-xl p-4 text-2xl bold" id="days"></p>
+      <p class="border border-black rounded-xl p-4 text-2xl bold" id="hours">
+      </p>
+      <p class="border border-black rounded-xl p-4 text-2xl bold" id="minutes">
+      </p>
+      <p class="border border-black rounded-xl p-4 text-2xl bold" id="seconds">
+      </p>
     </div>
+    <script>
+      var countDownDate = new Date("Nov 12, 2023 00:00:00").getTime();
+
+      var countdownFunction = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        if (distance < 0) {
+          clearInterval(countdownFunction);
+          document.getElementById("days").innerHTML = "";
+          document.getElementById("hours").innerHTML = "";
+          document.getElementById("minutes").innerHTML = "";
+          document.getElementById("seconds").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
   </div>
-
-  <script>
-    // Function to show the GIF when it's loaded
-    function showGif() {
-      document.getElementById("gif")?.classList.toggle("hidden");
-      document.getElementById("picture")?.classList.toggle("hidden");
-    }
-
-    // Create a JavaScript Image object to preload the GIF
-    var gifImage = new Image();
-    gifImage.src = "/images/about/card-aboutt3.gif"; // Set the path to your GIF image
-    gifImage.onload = showGif; // When the GIF is loaded, call the showGif function
-  </script>
 </Layout>
