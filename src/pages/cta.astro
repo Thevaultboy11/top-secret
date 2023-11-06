@@ -1,0 +1,204 @@
+---
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+import Cta from "~/components/Cta.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import LatestPosts from "~/components/blog/LatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+import { Picture } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+import TestimonialCarousel from "../components/TestimonialCarousel";
+const meta = {
+  title: "Do you want amplified security? ",
+  description:
+    "Defining boundaries for a quality security assement is hard. We make it easy.",
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    callToAction={{ text: "Experience Hybrid", href: "/learn-more" }}
+    image={{
+      alt: "AstroWind Hero Image",
+    }}
+  >
+    <Fragment slot="title">
+      Do you want<span class="text-accent highlight">amplified security?</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <p class="text-base break-line text-left leading-tight max-w-lg mx-auto">
+        Defining boundaries for a quality security assessment is hard. We make
+        it easy. Access our <span class="font-semibold">Free</span> 'Hybrid Model'
+        explanation below.
+      </p>
+    </Fragment>
+  </Hero>
+  <div class="">
+    <div class="max-w-xl mx-auto lg:max-w-2xl">
+      <div
+        class="mb-10 md:mx-auto flex text-center gap-y-2 items-center justify-center flex-col md:mb-12 max-w-4xl"
+      >
+        <p class="info-title">Security</p>
+        <h2 class="sub-title">Why is security important to you?</h2>
+      </div>
+    </div>
+    <div
+      class="mx-auto lg:max-w-7xl gap-12 p-8 grid grid-cols-1 md:grid-cols-3"
+    >
+      <div class="bg-paper shadow-md p-8 rounded-xl">
+        <h1 class="text-2xl text-center">Work Transparency</h1>
+        <Picture
+          src={"/images/pdf-report/card-pdff2.png"}
+          class="rounded-xl mr-auto my-4"
+          width={500}
+          height={300}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="1600:900"
+          alt="sa"
+        />
+        <p class="text-base">
+          Your business is linked to critical infrastructure or sensitive data,
+          and you understand the cost of a vulnerability that an attacker can
+          find.
+        </p>
+      </div>
+      <div class="bg-paper shadow-md p-8 rounded-xl">
+        <h1 class="text-2xl text-center">Work Transparency</h1>
+        <Picture
+          src={"/images/pdf-report/card-pdff2.png"}
+          class="rounded-xl mr-auto my-4"
+          width={500}
+          height={300}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="1600:900"
+          alt="sa"
+        />
+        <p class="text-base">
+          Your business is linked to critical infrastructure or sensitive data,
+          and you understand the cost of a vulnerability that an attacker can
+          find.
+        </p>
+      </div>
+      <div class="bg-paper shadow-md p-8 rounded-xl">
+        <h1 class="text-2xl text-center">Work Transparency</h1>
+        <Picture
+          src={"/images/pdf-report/card-pdff2.png"}
+          class="rounded-xl mr-auto my-4"
+          width={500}
+          height={300}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="1600:900"
+          alt="sa"
+        />
+        <p class="text-base">
+          Your business is linked to critical infrastructure or sensitive data,
+          and you understand the cost of a vulnerability that an attacker can
+          find.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto lg:max-w-7xl p-8">
+    <div>
+      <div class="info-title text-md w-52 text-center">Testimonials</div>
+      <div class="flex items-center">
+        <h1
+          class="sub-title font-bold leading-tighter tracking-tighter mb-4 font-heading"
+        >
+          What our clients <span class="italic">said</span>
+        </h1>
+      </div>
+
+      <p class="text-xl">The dream is to have seucrity</p>
+    </div>
+    <div class="w-full flex justify-start">
+      <TestimonialCarousel client:load />
+    </div>
+  </div>
+  <div class="mx-auto lg:max-w-7xl gap-12 p-8">
+    <h1 class="text-3xl">Products we offer</h1>
+    <div class="h-1 w-full bg-paper mt-2"></div>
+    <div class="w-full mt-4 grid grid-cols-2 gap-8">
+      <a
+        href="/product/webouncer"
+        class="bg-paper info-shadow px-8 py-6 rounded-xl"
+      >
+        <Picture
+          src={"/images/pdf-report/card-pdff2.png"}
+          class="rounded-xl mx-auto my-4"
+          width={300}
+          height={300}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="300:300"
+          alt="sa"
+        />
+
+        <h1 class="text-2xl my-4">Webouncer</h1>
+        <p class="text-base">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quos
+          quidem. Culpa doloribus rem veritatis veniam. Sunt accusamus
+          temporibus laboriosam.
+        </p>
+      </a>
+      <a
+        href="/product/webouncer"
+        class="bg-paper info-shadow px-8 py-6 rounded-xl"
+      >
+        <Picture
+          src={"/images/pdf-report/card-pdff2.png"}
+          class="rounded-xl mx-auto my-4"
+          width={300}
+          height={300}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="300:300"
+          alt="sa"
+        />
+
+        <h1 class="text-2xl my-4">Webouncer</h1>
+        <p class="text-base">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quos
+          quidem. Culpa doloribus rem veritatis veniam. Sunt accusamus
+          temporibus laboriosam.
+        </p>
+      </a>
+      <a
+        href="/product/webouncer"
+        class="bg-paper info-shadow px-8 py-6 rounded-xl"
+      >
+        <Picture
+          src={"/images/pdf-report/card-pdff2.png"}
+          class="rounded-xl mx-auto my-4"
+          width={300}
+          height={300}
+          widths={[400, 768]}
+          sizes="100vw, 432px"
+          aspectRatio="300:300"
+          alt="sa"
+        />
+
+        <h1 class="text-2xl my-4">Webouncer</h1>
+        <p class="text-base">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quos
+          quidem. Culpa doloribus rem veritatis veniam. Sunt accusamus
+          temporibus laboriosam.
+        </p>
+      </a>
+    </div>
+  </div>
+</Layout>

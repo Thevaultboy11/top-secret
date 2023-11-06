@@ -1,6 +1,77 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-button-prev {
+  color: #5a36ff;
+}
+.swiper-button-next {
+  color: #5a36ff;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #5a36ff;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+/* block quate */
+blockquote {
+  position: relative;
+  font-size: 1.5em;
+  width: 80%;
+  color: #5a36ff;
+  margin-bottom: 100px;
+}
+
+blockquote::before {
+  content: open-quote;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 4em;
+}
 
 @layer components {
   .text-page {
@@ -48,11 +119,17 @@
     background-color: rgba(198, 198, 198, 0.3);
     font-weight: 900;
     border-radius: 100px;
-    transition: box-shadow 0.4s;
+    transition: box-shadow 0.1s;
     display: flex;
     justify-content: center;
     align-items: center;
     @apply py-1 md:py-3 md:px-4;
+  }
+  .info-shadow {
+    transition: all 0.7s ease-in-out;
+  }
+  .info-shadow:hover {
+    box-shadow: 14px 8px 14px 0px rgb(105, 41, 196);
   }
   .info-card:hover {
     box-shadow: 14px 8px 14px 0px rgb(105, 41, 196);
@@ -73,6 +150,18 @@
     color: #fff;
     text-align: center;
     background-image: linear-gradient(20deg, hsl(265, 63%, 26%), #6929c2);
+    letter-spacing: 0.025em;
+    border-radius: 50em;
+    padding: 0.7em 1.4em;
+    font-size: 0.94em;
+    font-weight: 500;
+    line-height: 1.2em;
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .cta-button-secondary-xsm {
+    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(20deg, #003a52, #0084b8);
     letter-spacing: 0.025em;
     border-radius: 50em;
     padding: 0.7em 1.4em;
@@ -142,7 +231,7 @@
     background-color: transparent;
     background-image: linear-gradient(20deg, hsl(265, 63%, 26%), #6929c2);
     border-radius: 50em;
-    padding: 0.9em 1.8em;
+    padding: 0.6em 1.2em;
     font-weight: 500;
     line-height: 1.2em;
     transition: box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -230,14 +319,13 @@
   }
   .cover-title {
     font-family: "Nunito", sans-serif;
-    color: white;
+
     text-transform: uppercase;
     font-weight: 1000;
     @apply leading-4 md:leading-10;
   }
   .cover-sub-title {
     font-family: "Nunito", sans-serif;
-    color: white;
   }
 
   .blog-text {

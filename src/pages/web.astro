@@ -1,0 +1,149 @@
+---
+import { SITE } from "~/config.mjs";
+import Layout from "~/layouts/PageLayout.astro";
+import Cta from "~/components/Cta.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import LatestPosts from "~/components/blog/LatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+import { Picture } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+import TestimonialCarousel from "../components/TestimonialCarousel";
+const meta = {
+  title: "Do you want amplified security? ",
+  description:
+    "Defining boundaries for a quality security assement is hard. We make it easy.",
+  dontUseTitleTemplate: true,
+};
+
+const data = [
+  {
+    icon: "tabler:clock",
+    title: "E-commerce",
+    paragraph:
+      "Reduce rework. Speed up reporting. Standardize vulnerabilities and how testing is performed.",
+  },
+  {
+    icon: "tabler:clock",
+    title: "Novi",
+    paragraph:
+      "Reduce rework. Speed up reporting. Standardize vulnerabilities and how testing is performed.",
+  },
+  // Add more objects as needed
+];
+---
+
+<Layout {meta}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    callToAction={{ text: "Experience Hybrid", href: "/learn-more" }}
+    image={{
+      alt: "AstroWind Hero Image",
+    }}
+  >
+    <Fragment slot="title">
+      Do you want<span class="text-accent highlight">amplified security?</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <p class="text-base break-line text-left leading-tight max-w-lg mx-auto">
+        Defining boundaries for a quality security assessment is hard. We make
+        it easy. Access our <span class="font-semibold">Free</span> 'Hybrid Model'
+        explanation below.
+      </p>
+    </Fragment>
+  </Hero>
+  <div class="mx-auto lg:max-w-7xl p-8 grid gap-x-8 grid-cols-12">
+    <div class="col-span-6 px-8 py-6 rounded-xl">
+      <div>
+        <div class="flex flex-col">
+          <Icon name="tabler:clock" class="text-primary w-8 h-8 inline-block" />
+          <h1 class="text-3xl my-4">For who is Webouncer?</h1>
+          <div class="text-xl">
+            For people that rely on website traffic to convert leads.
+          </div>
+          <div class="text-xl text-primary">Stop hackers once and for all</div>
+        </div>
+        {
+          data.map(({ icon, title, paragraph }) => (
+            <div class="flex w-full flex-col gap-y-3 mt-8">
+              <div class="flex items-center gap-x-2">
+                <Icon name={icon} class="text-primary w-8 h-8 inline-block" />
+                <p class="text-md font-semibold" set:html={title} />
+              </div>
+              <p class="text-gray-400" set:html={paragraph} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="bg-primary w-full h-full col-span-6"></div>
+  </div>
+  <div class="mx-auto lg:max-w-7xl p-8 grid gap-x-8 grid-cols-12">
+    <div class="flex flex-col col-span-12 mb-4">
+      <Icon name="tabler:clock" class="text-primary w-8 h-8 inline-block" />
+      <h1 class="text-3xl my-4">What makes Web Bouncer Special?</h1>
+      <div class="text-xl">
+        For people that rely on website traffic to convert leads.
+      </div>
+      <div class="text-xl text-primary">Stop hackers once and for all</div>
+    </div>
+    <div class="bg-primary w-full h-full col-span-6"></div>
+    <div class="col-span-6 px-8 py-6 rounded-xl">
+      <div>
+        <div>
+          <div>
+            <h1 class="font-bold text-2xl mb-2">Business</h1>
+            <p>
+              webouncer helps you monitor your testing, perform analysis and
+              track compliance.
+            </p>
+          </div>
+          {
+            data.map(({ icon, title, paragraph }) => (
+              <div class="flex w-full flex-col gap-y-3 mt-8">
+                <div class="flex items-center gap-x-2">
+                  <Icon name={icon} class="text-primary w-8 h-8 inline-block" />
+                  <p class="text-md font-semibold" set:html={title} />
+                </div>
+                <p class="text-gray-400" set:html={paragraph} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto lg:max-w-7xl p-8 grid gap-x-8">
+    <h1 class="font-extrabold text-3xl md:text-3xl">
+      Built for SmB owners, and Large corporations
+    </h1>
+    <p class="text-xl max-w-3xl space-y-6 mt-4">
+      Whether you’re a pentester or a team scaling for success there is an
+      AttackForge <span class="font-semibold">tailored for you.</span>
+    </p>
+  </div>
+  <div class="mx-auto lg:max-w-7xl px-32 py-12 rounded-xl bg-paper">
+    <div class="flex flex-col w-full max-w-md">
+      <h1 class="text-3xl font-bold tracking-tight">Working on a Pentest?</h1>
+      <p class="my-4 text-lg leading-8">
+        Get your own dedicated tenant with a custom domain deployed in under 2
+        minutes.
+      </p>
+      <div class="flex gap-x-4 items-center">
+        <a href="web/web-cta" class="w-36 cta-button-xsm">Get now</a>
+        <a href="web/pricing" class="w-36 flex items-center">
+          <p>See pricing</p>
+          <Icon name="raphael:arrowright" class="text-primary w-8 h-8" />
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
