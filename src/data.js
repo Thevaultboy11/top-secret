@@ -26,7 +26,7 @@ export const headerData = {
   ],
   actions: [
     {
-      text: "Experience Hybrid",
+      text: "See Countdown",
       href: "/learn-more",
       type: "primary",
     },

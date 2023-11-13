@@ -17,32 +17,32 @@ import Accordion from "~/components/accordionComponent";
 
 const meta = {
   title: "Learn more",
-  description: "In this short video we will explain you our hybrid model.",
+  description: "In this short video we will explain you our Secret model.",
   dontUseTitleTemplate: true,
 };
 ---
 
 <Layout {meta}>
   <div
-    class="flex py-40 justify-center flex-col items-center w-full mx-auto max-w-4xl"
+    class="flex p-8 md:py-40 justify-center flex-col items-center w-full mx-auto max-w-4xl"
   >
     <h1
       class="text-back text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
     >
       New Product's Soon.
     </h1>
-    <p>Something started forming, and will take shape soon.</p>
-    <div class="flex gap-x-4 my-8">
-      <p class="border border-black rounded-xl p-4 text-2xl bold" id="days"></p>
-      <p class="border border-black rounded-xl p-4 text-2xl bold" id="hours">
+    <p class="text-center">We're excited to share that 3 new products are on the way! Get ready for improved, faster, and smarter options arriving in</p>
+    <div class="w-full md:max-w-max flex flex-col  md:flex-row gap-y-4 gap-x-4 my-8">
+      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="days"></p>
+      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="hours">
       </p>
-      <p class="border border-black rounded-xl p-4 text-2xl bold" id="minutes">
+      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="minutes">
       </p>
-      <p class="border border-black rounded-xl p-4 text-2xl bold" id="seconds">
+      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="seconds">
       </p>
     </div>
     <script>
-      var countDownDate = new Date("Nov 12, 2023 00:00:00").getTime();
+      var countDownDate = new Date("Nov 21, 2023 00:00:00").getTime();
 
       var countdownFunction = setInterval(function () {
         var now = new Date().getTime();
@@ -55,10 +55,11 @@ const meta = {
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerHTML = days;
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
+        document.getElementById("days").innerHTML = `${days} d`;
+document.getElementById("hours").innerHTML = `${hours} h`;
+document.getElementById("minutes").innerHTML = `${minutes} min`;
+document.getElementById("seconds").innerHTML = `${seconds} sec`;
+
 
         if (distance < 0) {
           clearInterval(countdownFunction);
