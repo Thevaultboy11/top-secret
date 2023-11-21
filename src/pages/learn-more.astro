@@ -31,18 +31,36 @@ const meta = {
     >
       New Product's Soon.
     </h1>
-    <p class="text-center">We're excited to share that 3 new products are on the way! Get ready for improved, faster, and smarter options arriving in</p>
-    <div class="w-full md:max-w-max flex flex-col  md:flex-row gap-y-4 gap-x-4 my-8">
-      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="days"></p>
-      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="hours">
+    <p class="text-center">
+      We're excited to share that 3 new products are on the way! Get ready for
+      improved, faster, and smarter options arriving in
+    </p>
+    <div
+      class="w-full md:max-w-max flex flex-col md:flex-row gap-y-4 gap-x-4 my-8"
+    >
+      <p
+        class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold"
+        id="days"
+      >
       </p>
-      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="minutes">
+      <p
+        class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold"
+        id="hours"
+      >
       </p>
-      <p class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold" id="seconds">
+      <p
+        class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold"
+        id="minutes"
+      >
+      </p>
+      <p
+        class="border w-full text-center md:max-w-max bg-primary text-white rounded-xl p-4 text-2xl bold"
+        id="seconds"
+      >
       </p>
     </div>
     <script>
-      var countDownDate = new Date("Nov 21, 2023 00:00:00").getTime();
+      var countDownDate = new Date("Dec 1, 2023 00:00:00").getTime();
 
       var countdownFunction = setInterval(function () {
         var now = new Date().getTime();
@@ -56,10 +74,9 @@ const meta = {
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         document.getElementById("days").innerHTML = `${days} d`;
-document.getElementById("hours").innerHTML = `${hours} h`;
-document.getElementById("minutes").innerHTML = `${minutes} min`;
-document.getElementById("seconds").innerHTML = `${seconds} sec`;
-
+        document.getElementById("hours").innerHTML = `${hours} h`;
+        document.getElementById("minutes").innerHTML = `${minutes} min`;
+        document.getElementById("seconds").innerHTML = `${seconds} sec`;
 
         if (distance < 0) {
           clearInterval(countdownFunction);
